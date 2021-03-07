@@ -2276,10 +2276,6 @@ const user = {
 };
 const history1 = [];
 const compose = (f, g) => (...args) => f(g(...args));
-const pipe = (f, g) => (...args) => g(f(...args));
-const purchaseItem = (...fns) => fns.reduce(compose);
-const purchaseItem2 = (...fns) => fns.reduce(pipe);
-
 /* Compose Itrations
 compose = (f, g) => (...args) => f(g(args))
 
@@ -2292,9 +2288,28 @@ compose = (f, g) => (...args) => f(g(args))
   (emptyCart(buyItems()), applyTaxToItems) => (user, { name: "laptop", price: 200 }) => emptyCart(buyItems(applyTaxToItems(user, { name: "laptop", price: 200 }))
 
   itration 3
-                     f                         g                         ...args                           f                          g                      ...args
-   (emptyCart(buyItems((applyTaxToItems()), addToCart) => ({ name: "laptop", price: 200 }) => emptyCart(buyItems((applyTaxToItems(addToCart(user, { name: "laptop", price: 200 }))
+                     f                         g                         ...args                           f                                 g                ...args
+   (emptyCart(buyItems((applyTaxToItems()), addToCart) => (user, { name: "laptop", price: 200 }) => emptyCart(buyItems(applyTaxToItems(addToCart(user, { name: "laptop", price: 200 }))
 */
+
+const pipe = (f, g) => (...args) => g(f(...args));
+/* Compose Itrations
+pipe = (f, g) => (...args) => g(f(...args));
+
+  itration 1
+      f           g                    ...args                           g        f                     ...args
+  (emptyCart, buyItems) => (user, { name: "laptop", price: 200 }) => buyItems(emptyCart(user, { name: "laptop", price: 200 }))
+
+  itration 2
+      f                         g                         ...args                              g                   f                       ...args
+  (buyItems(emptyCart())), applyTaxToItems) => (user, { name: "laptop", price: 200 }) => applyTaxToItems(buyItems(emptyCart(user, { name: "laptop", price: 200 }))
+
+  itration 3
+                     f                         g                         ...args                           f                                 g                ...args
+   (applyTaxToItems(buyItems(emptyCart()), addToCart) => (user, { name: "laptop", price: 200 }) => addToCart(applyTaxToItems(buyItems(emptyCart(user, { name: "laptop", price: 200 }))
+*/
+const purchaseItem = (...fns) => fns.reduce(compose);
+const purchaseItem2 = (...fns) => fns.reduce(pipe);
 
 function addItemToCart(user, item) {
   history1.push(user);
