@@ -2280,6 +2280,22 @@ const pipe = (f, g) => (...args) => g(f(...args));
 const purchaseItem = (...fns) => fns.reduce(compose);
 const purchaseItem2 = (...fns) => fns.reduce(pipe);
 
+/* Compose Itrations
+compose = (f, g) => (...args) => f(g(args))
+
+  itration 1
+      f           g                    ...args                           f        g                     ...args
+  (emptyCart, buyItems) => (user, { name: "laptop", price: 200 }) => emptyCart(buyItems(user, { name: "laptop", price: 200 }))
+
+  itration 2
+      f                         g                         ...args                              f                   g                       ...args
+  (emptyCart(buyItems()), applyTaxToItems) => (user, { name: "laptop", price: 200 }) => emptyCart(buyItems(applyTaxToItems(user, { name: "laptop", price: 200 }))
+
+  itration 3
+                     f                         g                         ...args                           f                          g                      ...args
+   (emptyCart(buyItems((applyTaxToItems()), addToCart) => ({ name: "laptop", price: 200 }) => emptyCart(buyItems((applyTaxToItems(addToCart(user, { name: "laptop", price: 200 }))
+*/
+
 function addItemToCart(user, item) {
   history1.push(user);
   const updatedCart = user.cart.concat(item);
