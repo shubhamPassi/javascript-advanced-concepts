@@ -2293,7 +2293,7 @@ compose = (f, g) => (...args) => f(g(args))
 */
 
 const pipe = (f, g) => (...args) => g(f(...args));
-/* Compose Itrations
+/* pipe Itrations
 pipe = (f, g) => (...args) => g(f(...args));
 
   itration 1
