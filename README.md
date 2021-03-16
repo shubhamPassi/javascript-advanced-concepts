@@ -2384,6 +2384,7 @@ function goForward() {}
 
 - Job Queue has high priority than Callback Queue
 - [Understanding Event Loop, Call Stack, Event & Job Queue in Javascript](https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd)
+- [Asynchronous JavaScript & EVENT LOOP](https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini)
 
 ```javascript
 // Callback Queue - Task Queue
