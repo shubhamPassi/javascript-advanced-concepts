@@ -2162,6 +2162,8 @@ for (let i = 0; i < 3, i++) {
 
 [Immutable.js, persistent data structures and structural sharing](https://medium.com/@dtinth/immutable-js-persistent-data-structures-and-structural-sharing-6d163fbd73d2)
 
+[ Immutability in JavaScript](https://www.youtube.com/watch?v=4LzcQyZ9JOU&t=130s&ab_channel=ReactCasts)
+
 ```javascript
 const obj = { name: "Andrei" };
 function clone(obj) {
