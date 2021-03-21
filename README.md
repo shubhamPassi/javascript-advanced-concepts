@@ -902,7 +902,7 @@ Let's understand what happens when you create an object (instance) of MyFunc() u
 
 - In the fourth and last step, it will return this newly created object. MyFunc does not include return statement but compiler will implicitly insert 'return this' at the end.
 
-- The following figure illustrates the above process.
+The following figure illustrates the above process.
 
 ![](new-keyword.png)
 
