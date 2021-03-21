@@ -892,7 +892,8 @@ obj1.x; // 100
 obj1.y; // 200
 ```
 
-- Let's understand what happens when you create an object (instance) of MyFunc() using new keyword.
+Let's understand what happens when you create an object (instance) of MyFunc() using new keyword.
+
 - First of all, new keyword creates an empty object - { }.
 
 - Second, it set's invisible 'prototype' property (or attribute) of this empty object to myFunc's prototype property. As you can see in the above example, we have assigned new property 'y' using MyFunc.prototype.y. So, new empty object will also have same prototype property as MyFunc which includes y property.
