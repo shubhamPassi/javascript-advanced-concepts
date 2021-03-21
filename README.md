@@ -43,6 +43,7 @@
     - [Global Variables](#global-variables)
     - [IIFE](#iife)
     - [this Keyword](#this-keyword)
+    - [new Keyword](#new-keyword)
     - [Dynamic Scope vs Lexical Scope](#dynamic-scope-vs-lexical-scope)
     - [call(), apply(), bind()](#call-apply-bind)
     - [bind() and currying](#bind-and-currying)
@@ -857,6 +858,86 @@ giveMeTheCharacterNOW();
 
 **[⬆ back to top](#table-of-contents)**
 
+### new Keyword
+
+- object can be created with new keyword.
+
+```javascript
+function MyFunc() {
+  this.x = 100;
+}
+
+var obj1 = new MyFunc();
+obj1.x;
+```
+
+- MyFunc() is called a constructor function. The new keyword constructs and returns an object (instance) of a constructor function.
+- The new keyword performs following four tasks:
+  1. It creates new empty object e.g. obj = { };
+  2. It sets new empty object's invisible 'prototype' property to be the constructor function's visible and accessible 'prototype' property. (Every function has visible 'prototype' property whereas every object includes invisible 'prototype' property).
+  3. It binds property or function which is declared with this keyword to the new object.
+  4. It returns newly created object unless the constructor function returns a non-primitive value (custom JavaScript object). If constructor function does not include return statement then compiler will insert 'return this;' implicitly at the end of the function. If the constructor function returns a primitive value then it will be ignored.
+
+```JavaScript
+//Example: new keyword
+function MyFunc() {
+    var myVar = 1;
+    this.x = 100;
+}
+
+MyFunc.prototype.y = 200;
+
+var obj1 = new MyFunc();
+obj1.x; // 100
+obj1.y; // 200
+```
+
+-Let's understand what happens when you create an object (instance) of MyFunc() using new keyword.
+-First of all, new keyword creates an empty object - { }.
+
+-Second, it set's invisible 'prototype' property (or attribute) of this empty object to myFunc's prototype property. As you can see in the above example, we have assigned new property 'y' using MyFunc.prototype.y. So, new empty object will also have same prototype property as MyFunc which includes y property.
+
+-In third step, it binds all the properties and function declared with this keyword to new empty object. Here, MyFunc includes only one property x which is declared with this keyword. So new empty object will now include x property. MyFunc also includes myVar variable which does not declared with this keyword. So myVar will not be included in new object.
+
+-In the fourth and last step, it will return this newly created object. MyFunc does not include return statement but compiler will implicitly insert 'return this' at the end.
+
+-The following figure illustrates the above process.
+
+![](new-keyword.png)
+
+The new keyword ignores return statement that returns primitive value.
+
+```Javascript
+Example: new keyword
+function MyFunc() {
+    this.x = 100;
+
+    return 200;
+}
+
+var obj = new MyFunc();
+alert(obj.x); // 100
+```
+
+If function returns non-primitive value (custom object) then new keyword does not perform above 4 tasks.
+
+```Javascript
+Example: new keyword
+function MyFunc() {
+    this.x = 100;
+
+    return { a: 123 };
+}
+
+var obj1 = new MyFunc();
+
+alert(obj1.x); // undefined
+```
+
+Thus, new keyword builds an object of a function in JavaScript.
+
+**[⬆ back to top](#table-of-contents)**
+
 ### Dynamic Scope vs Lexical Scope
 
 - lexical scope: available data + variables where function was defined
@@ -1578,9 +1659,10 @@ for (var i = 0; i < array.length; i++) {
 }
 ```
 
-### Var And Let Inside a loop, inner function and setTimeoout
+![](var-let-in-for-loop-1.png)
+![](var-let-in-for-loop-2.png)
 
-- [Var And Let Working Inside a loop](https://www.youtube.com/watch?v=LRWA9rdcK8o&ab_channel=bendtherules)
+- [Var And Let Inside a loop, inner function and setTimeoout](https://www.youtube.com/watch?v=LRWA9rdcK8o&ab_channel=bendtherules)
 
 **[⬆ back to top](#table-of-contents)**
 
