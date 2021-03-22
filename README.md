@@ -33,6 +33,7 @@
 
     - [Execution Context](#execution-context)
     - [Lexical Environment](#lexical-environment)
+    - [Lexical Environment vs Execution Context](#lexical-environment-vs-execution-context)
     - [Hoisting](#hoisting)
     - [Function Invocation](#function-invocation)
     - [arguments Keyword](#arguments-keyword)
@@ -495,6 +496,18 @@ one();
 ```
 
 **[⬆ back to top](#table-of-contents)**
+
+### Lexical Environment vs Execution Context
+
+The best way to think of an execution context is as a stack frame, while lexical environments are indeed the scopes.
+
+-Execution contexts contain the current evaluation state of code, a reference to the code (function) itself, and possibly references to the current lexical environments.
+Execution contexts are managed in a stack.
+
+-Lexical environments contain an environment record in which the variables are stored, and a reference to their parent environment (if any).
+Lexical environments build a tree structure.
+
+With every change of the execution context, the lexical environment changes as well. However the lexical environment may change independently from that as well, for example when entering a block.
 
 ### Hoisting
 
