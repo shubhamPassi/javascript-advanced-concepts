@@ -2596,6 +2596,7 @@ fightModule.fight("harry", "voldemort");
 
 - [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 - [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [JavaScript ES6 Modules more in depth](https://youtu.be/cRHQNNcYf6s)
 
 **[⬆ back to top](#table-of-contents)**
 
