@@ -159,7 +159,7 @@
 
 ### #fastest-way-to-load-javaScript
 
-![](fastest-way-to-load-js.png)
+![](fastest-way-to-load-js.gif)
 
 - [defer vs async in html explaination](https://youtu.be/BMuFBYw91UQ)
 
