@@ -157,11 +157,13 @@
 
 ## **Section 2: JavaScript Foundation**
 
-### #fastest-way-to-load-javaScript
+### Fastest Way To Load JavaScript
 
 ![](fastest-way-to-load-js.gif)
 
 - [defer vs async in html explaination](https://youtu.be/BMuFBYw91UQ)
+
+**[⬆ back to top](#table-of-contents)**
 
 ### Javascript Engine
 
