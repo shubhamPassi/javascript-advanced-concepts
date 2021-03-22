@@ -9,6 +9,7 @@
     <details>
     <summary>Click to expand!</summary>
       
+    - [Fastest Way To Load JavaScript](#fastest-way-to-load-javaScript)
     - [Javascript Engine](#javascript-engine)
     - [Inside the Engine](#inside-the-engine)
     - [Interpreters and Compilers](#interpreters-and-compilers)
@@ -155,6 +156,12 @@
     </details>
 
 ## **Section 2: JavaScript Foundation**
+
+### #fastest-way-to-load-javaScript
+
+![](fastest-way-to-load-js.png)
+
+- [defer vs async in html explaination](https://youtu.be/BMuFBYw91UQ)
 
 ### Javascript Engine
 
