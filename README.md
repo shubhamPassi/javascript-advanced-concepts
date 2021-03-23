@@ -39,9 +39,9 @@
     - [arguments Keyword](#arguments-keyword)
     - [Variable Environment](#variable-environment)
     - [Block](#block)
-    - [Shadowing](#shadowing)
+    - [Variable Shadowing](#variable-shadowing)
     - [Scope Chain](#scope-chain)
-    - [[[scope]]](#scope)
+    - [scope](#scope)
     - [JS is Weird](#js-is-weird)
     - [Function Scope vs Block Scope](#function-scope-vs-block-scope)
     - [Global Variables](#global-variables)
@@ -725,7 +725,7 @@ console.log(a);
 // it will show an error
 ```
 
-we should use var, let and const on the bases that it will not interfare with the boundaries of var,let and const.
+we should use var, let and const on the bases that it will not interfare with the boundaries of var,let and const inside inner block.
 This rules are same for functions and arrow functions.
 
 ```javascript
@@ -765,6 +765,14 @@ function sayMyName() {
 
 sayMyName()()();
 ```
+
+![](scope-img-1.png)
+
+In general, variable decleared with var keyword will get partially hoisted in global scope and can be accessed directly before executing that statement. let and const will get partially hoisted in script scope but cannot be accessed directly without executing that statement and if let and const are present in inner scope then they will get partially hoisted in block scope and cannot be accessed directly without executing that statement.
+
+![](scope-img-2.png)
+
+inside a function, variable decleared with var keyword will get partially hoisted in local scope and can be accessed directly before executing that statement. let and const will also get partially hoisted in local scope but cannot be accessed directly without executing that statement and if let and const are present in inner scope in the function then they will get partially hoisted in block scope and cannot be accessed directly without executing that statement.
 
 **[⬆ back to top](#table-of-contents)**
 
