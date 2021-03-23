@@ -2912,6 +2912,8 @@ function foo() {
 foo();
 ```
 
+[Explanation source](https://smellycode.com/catch-block-varible-scope/)
+
 **[⬆ back to top](#table-of-contents)**
 
 ### Extending Errors
