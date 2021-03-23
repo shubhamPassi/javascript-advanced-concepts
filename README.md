@@ -38,6 +38,8 @@
     - [Function Invocation](#function-invocation)
     - [arguments Keyword](#arguments-keyword)
     - [Variable Environment](#variable-environment)
+    - [Block](#block)
+    - [Shadowing](#shadowing)
     - [Scope Chain](#scope-chain)
     - [[[scope]]](#scope)
     - [JS is Weird](#js-is-weird)
@@ -649,6 +651,92 @@ one();
 // var isValid = undefined;
 
 // function two execution context execution
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+### Block
+
+Block is use to combine multiple javascript statements into one group i.e combined statement.
+example:
+
+```javascript
+{
+  //combined statement
+  var a = 10;
+  var b = 15;
+  a + b;
+}
+```
+
+if we talk about statement. then we can say that
+
+```javascript
+{
+  if (true); //statement
+}
+```
+
+It is a valid statement.
+
+**[⬆ back to top](#table-of-contents)**
+
+### Variable Shadowing
+
+Variable shadowing occurs when a variable of an inner scope is defined with the same name as a variable in the outer scope. In the inner scope, both variables’ scope overlap.
+![](shadowing.png)
+
+var shadowing example
+
+```javascript
+var a = 100;
+{
+  var a = 5;
+  let b = 10;
+  const c = 15;
+  console.log(a); // 5
+}
+console.log(a); // 100
+```
+
+let and const shadowing example:
+
+```javascript
+let b = 200;
+{
+  var a = 5;
+  let b = 10;
+  const c = 15;
+  console.log(b); // 10
+}
+console.log(b); // 200
+```
+
+lets see example of illegal shadowing
+
+```javascript
+let a = 100;
+{
+  var a = 5;
+
+  console.log(a);
+}
+console.log(a);
+// it will show an error
+```
+
+we should use var, let and const on the bases that it will not interfare with the boundaries of var,let and const.
+This rules are same for functions and arrow functions.
+
+```javascript
+var a = 100;
+function fun() {
+  var a = 5;
+  let b = 10;
+  const c = 15;
+  console.log(a); // 5
+}
+console.log(a); // 100
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -2386,7 +2474,7 @@ const user = {
 const history1 = [];
 const compose = (f, g) => (...args) => f(g(...args));
 /* Compose Itrations
-compose = (f, g) => (...args) => f(g(args))
+compose = (f, g) => (...args) => f(g(...args))
 
   itration 1
       f           g                    ...args                           f        g                     ...args
@@ -2621,14 +2709,9 @@ fightModule.fight("harry", "voldemort");
 
 ### Errors In JavaScript
 
-Call Stack
+![](try-catch.png)
 
-- ERROR!
-- Is there a catch?
-- Is there a catch?
-
-- Runtime catch: onerror() - browser
-- process.on('uncaughtException') - Node JS
+When a runtime error occurs in JavaScript a new Error object will be created and thrown. This error object can have up to three properties: the error, the file name where the error occurred, and the line number containing the error.
 
 ```javascript
 throw "Error2"; // String type
@@ -2669,9 +2752,24 @@ function fail() {
 fail();
 ```
 
+try catch works only with synchronous code. it will not throw an error with asynchronous code.
+for example:
+
+```javascript
+try {
+  setTimeout(function () {
+    fakevariable;
+  }, 1000);
+} catch (e) {
+  console.log("error", e);
+} // This code will not throw error in try catch
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ### Async Error Handling
+
+To handle a asynchronous error we have .catch() method which we can use with promises. As try catch block works with synchronous code only.
 
 ```javascript
 Promise.resolve("asyncfail")
@@ -2694,6 +2792,8 @@ Promise.resolve("asyncfail")
     return "failed";
   });
 ```
+
+but it gets very tricky to handle an error with .catch() method when it comes to nested promise. So, to solve this issue we will use async await with try catch block. As we know try catch block is only for synchronous code and we used the .catch for our asynchronous code using promises. async await although asynchronous makes our code look synchronous so we can actually use try catch blocks with them.
 
 ```javascript
 (async function () {
@@ -2724,6 +2824,92 @@ Promise.resolve("asyncfail")
   console.log(err);
   console.log(boo);
 })();
+```
+
+Solution:
+
+```javascript
+(function () {
+  try {
+    throw new Error();
+  } catch (err) {
+    var err = 5;
+    var boo = 10;
+    console.log(err); // 5
+  }
+  //Guess what the output is here:
+  console.log(err); // undefined
+  console.log(boo); // 10
+})();
+```
+
+Explanation:
+
+The Block of a Catch clause may contain var declarations that bind a name that is also bound by the CatchParameter. At runtime, such bindings are instantiated in the VariableDeclarationEnvironment. They do not shadow the same-named bindings introduced by the CatchParameter and hence the Initializer for such var declarations will assign to the corresponding catch parameter rather than the var binding.
+
+In simple words, the catch parameter is block-scoped—can not be accessed outside the block. And, it overrides/shadows variables with the same name.
+
+```javascript
+function foo() {
+  "use strict";
+  try {
+    throw "hello";
+  } catch (err) {
+    console.log(err); // hello
+  }
+  // `err` block scoped. Does not exist outside the catch block.
+  console.log(err); // throws `err` is not defined.
+}
+foo();
+```
+
+Since the catch parameter overrides variables with the same name in the current execution context from enclosing function or global context — any initializer for the catch parameter does not affect those variables.
+
+```javascript
+function foo() {
+  let err = 0;
+  try {
+    throw "hello";
+  } catch (err) {
+    console.log(err); // hello
+    err = 10;
+  }
+  console.log(err); // 0
+}
+
+foo();
+```
+
+Of course, if we declare a block scope variable same as catch parameter inside the catch block, then Js will complain.
+
+```javascript
+function foo() {
+  try {
+    throw "hello";
+  } catch (err) {
+    console.log(err);
+    let err = 2; // will throw an error.
+  }
+  console.log(err);
+}
+foo();
+```
+
+Declarations with var are not block-scoped and hoisted to the top of the function. Also, JavaScript is more forgiving towards re-declaration of variables with var. That’s why no error is raised even in the ‘strict’ mode.
+
+```javascript
+function foo() {
+  "use strict";
+  err = 1;
+  try {
+    throw "hello";
+  } catch (err) {
+    console.log(err); // hello
+    var err = 2;
+  }
+  console.log(err); // 1
+}
+foo();
 ```
 
 **[⬆ back to top](#table-of-contents)**
