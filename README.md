@@ -243,15 +243,14 @@ Here are a few things you should avoid when writing your code if possible:
 
 - eval()
 
-  Reasons to Avoid Using eval()
-  
+  - Reasons to Avoid Using eval()
     Unless you are doing really high-level JavaScript (see below) the risks usually outweigh the benefits of using eval(). Here’s some of the reasons to avoid using it:
 
     1. **Malicious code** : invoking eval can crash a computer. For example: if you use eval server-side and a mischievous user decides to use an infinite loop as their username.
 
     2. **Terribly slow** : the JavaScript language is designed to use the full gamut(The complete range or scope) of JavaScript types (numbers, functions, objects, etc)… Not just strings! Using eval is orders of magnitude slower than normal JavaScript code.
 
--arguments
+- arguments
 - for in
 - with
 - delete
