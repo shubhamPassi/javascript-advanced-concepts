@@ -242,7 +242,9 @@ Memoization is a way to cache a return value of a funcBon based on its parameter
 Here are a few things you should avoid when writing your code if possible:
 
 - eval()
+
   Reasons to Avoid Using eval()
+  
     Unless you are doing really high-level JavaScript (see below) the risks usually outweigh the benefits of using eval(). Here’s some of the reasons to avoid using it:
 
     1. **Malicious code** : invoking eval can crash a computer. For example: if you use eval server-side and a mischievous user decides to use an infinite loop as their username.
