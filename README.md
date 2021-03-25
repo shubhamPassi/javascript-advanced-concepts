@@ -1260,7 +1260,7 @@ console.log(multipleByThree(4));
 
 ### Javascript Types
 
-**Primitive Types**
+**Premitive Types**
 In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 7 primitive data types: string, number, bigint, boolean, undefined, symbol, and null.
 
 All primitives are immutable, i.e., they cannot be altered. It is important not to confuse a primitive itself with a variable assigned a primitive value. The variable may be reassigned a new value, but the existing value can not be changed in the ways that objects, arrays, and functions can be altered.
