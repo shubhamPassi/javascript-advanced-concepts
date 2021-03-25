@@ -242,8 +242,9 @@ Memoization is a way to cache a return value of a funcBon based on its parameter
 Here are a few things you should avoid when writing your code if possible:
 
 - eval()
+
   - Reasons to Avoid Using eval()
-    
+
     Unless you are doing really high-level JavaScript (see below) the risks usually outweigh the benefits of using eval(). Here’s some of the reasons to avoid using it:
 
     1. **Malicious code** : invoking eval can crash a computer. For example: if you use eval server-side and a mischievous user decides to use an infinite loop as their username.
@@ -1259,9 +1260,12 @@ console.log(multipleByThree(4));
 
 ### Javascript Types
 
-[Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+**Primitive Types**
+In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods. There are 7 primitive data types: string, number, bigint, boolean, undefined, symbol, and null.
 
-```javascript
+All primitives are immutable, i.e., they cannot be altered. It is important not to confuse a primitive itself with a variable assigned a primitive value. The variable may be reassigned a new value, but the existing value can not be changed in the ways that objects, arrays, and functions can be altered.
+
+```JavaScript
 // Primitive
 typeof 5;
 typeof true;
@@ -1269,7 +1273,23 @@ typeof "To be or not to be";
 typeof undefined; // absent of definition
 typeof null; // absent of value
 typeof Symbol("just me");
+```
 
+Let me make it more clear for you by an example:
+
+![](premitive-types.jpg)
+
+Look at an above simple example, There I have defined name variable by assigning String primitive type. In order to demonstrate the above-stated points about primitive types, I have created the second variable with name anotherName and copied the value of the name variable into it. Then, I changed the value of anotherName variable to something else. Then, I have printed both variables.
+
+As you can clearly see, Both values are different that clearly proves that values are copied in the case of Primitive types.
+
+**Reference Types**
+
+- Now you can probably guess about Reference types. It consists of Array, Object, and Function.
+- In the case of Reference types Variables actually don't have the actual values but it contains a reference to that particular value.
+- Here, Reference simply means a pointer to another memory location that holds particular value. This might be sound confusing for you at first glance but bear with me. Once you go through it would be very clear to you.
+
+```javascript
 // Non-Primitive
 // has a reference or pointer
 typeof {};
@@ -1290,6 +1310,21 @@ a.hi = "hi";
 true.toString();
 Boolean(true).toString();
 ```
+
+Example:
+
+![](reference-types.png)
+
+In the above example, I have used an array to demonstrate the working of Reference types in JavaScript. First, I have defined arr1 with three elements in it. Then, I have defined arr2 by copying arr1 into it. Now, let me reveal the magic by changing one of the elements in arr2. And then, I have printed both arrays and surprise, both are having that updated value though I have not touched the arr1.
+
+This result produced because of the default behavior of Reference types in JavaScript. As I stated above that Reference types are not copying the actual values rather they are just keeping the reference to that particular value in the memory.
+
+You might have a question that Why Reference types created although we could simply just copy the values:
+Answer: It is not always optimal to just copy the values when we are assigning value to a variable. Because copying the values would cost large overhead as it needs to allocate a new memory block and copies the values from that location to this newly allocated memory location. It would be easy in the case of Primitive types as it would not contain many values as arrays or objects.
+
+So this behavior is implemented to save time and memory both.
+
+[Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 
 **[⬆ back to top](#table-of-contents)**
 
