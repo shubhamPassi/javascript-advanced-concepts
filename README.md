@@ -1313,7 +1313,7 @@ Boolean(true).toString();
 
 Example:
 
-![](reference-types.png)
+![](reference-types.jpg)
 
 In the above example, I have used an array to demonstrate the working of Reference types in JavaScript. First, I have defined arr1 with three elements in it. Then, I have defined arr2 by copying arr1 into it. Now, let me reveal the magic by changing one of the elements in arr2. And then, I have printed both arrays and surprise, both are having that updated value though I have not touched the arr1.
 
