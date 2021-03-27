@@ -27,6 +27,7 @@
     - [Node.js](#nodejs)
     - [Advanced JavaScript Cheatsheet](#advanced-javascript-cheatsheet)
     </details>
+
   - [**Section 3: Javascript Foundation II**](#section-3-javascript-foundation-ii)
     <details>
     <summary>Click to expand!</summary>
@@ -87,6 +88,7 @@
     - [Prototypal Inheritance with this](#prototypal-inheritance-with-this)
     - [Section Review](#section-review)
     </details>
+
   - [**Section 6: Object Oriented Programming**](#section-6-object-oriented-programming)
     <details>
     <summary>Click to expand!</summary>
@@ -104,6 +106,7 @@
     - [4 Pillars of OOP](#4-pillars-of-oop)
     - [Exercise: OOP and Polymorphism](#exercise-oop-and-polymorphism)
     </details>
+
   - [**Section 7: Functional Programming**](#section-7-functional-programming)
     <details>
     <summary>Click to expand!</summary>
@@ -122,6 +125,7 @@
     - [Arity](#arity)
     - [Solution: Amazon](#solution-amazon)
     </details>
+
   - [**Section 8: OOP vs FP**](#section-8-oop-vs-fp)
     <details>
     <summary>Click to expand!</summary>
@@ -129,6 +133,7 @@
     - [Composition vs Inheritance](#composition-vs-inheritance)
     - [OOP vs FP](#oop-vs-fp)
     </details>
+
   - [**Section 9: Asynchronous JavaScript**](#section-9-asynchronous-javascript)
     <details>
     <summary>Click to expand!</summary>
@@ -137,6 +142,7 @@
     - [Parallel, Sequence and Race](#parallel-sequence-and-race)
     - [Threads, Concurrency and Parallelism](#threads-concurrency-and-parallelism)
     </details>
+
   - [**Section 10: Modules In JavaScript**](#section-10-modules-in-javascript)
     <details>
     <summary>Click to expand!</summary>
@@ -147,6 +153,7 @@
     - [CommonJS, AMD, UMD](#commonjs-amd-umd)
     - [ES6 Modules](#es6-modules)
     </details>
+
   - [**Section 11: Error Handling**](#section-11-error-handling)
     <details>
     <summary>Click to expand!</summary>
