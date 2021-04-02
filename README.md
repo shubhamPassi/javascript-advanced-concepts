@@ -179,7 +179,7 @@
 
 ## **Section 1: Lists and examples for new Javascript features**
 
-# ES2015 ES6 feature list and examples
+### ES2015 ES6 feature list and examples
 
 <details>
   <summary>Click to expand!</summary>
@@ -780,7 +780,7 @@ factorial(100000)
 
 **[⬆ back to top](#table-of-contents)**
 
-# ES2016 ES7 feature list and examples
+### ES2016 ES7 feature list and examples
 
 <details>
   <summary>Click to expand!</summary>
