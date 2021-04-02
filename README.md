@@ -2,168 +2,824 @@
 
 ## Table of Contents
 
-- [JavaScript: The Advanced Concepts Study Notes (Live)](#javascript-the-advanced-concepts-study-notes-live)
+-   [JavaScript: The Advanced Concepts Study Notes](#javascript-the-advanced-concepts-study-notes)
 
-  - [Table of Contents](#table-of-contents)
-  - [**Section 2: JavaScript Foundation**](#section-2-javascript-foundation)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Fastest Way To Load JavaScript](#fastest-way-to-load-javaScript)
-    - [Javascript Engine](#javascript-engine)
-    - [Inside the Engine](#inside-the-engine)
-    - [Interpreters and Compilers](#interpreters-and-compilers)
-    - [Babel + TypeScript](#babel--typescript)
-    - [Inside the V8 Engine](#inside-the-v8-engine)
-    - [Comparing Other Languages](#comparing-other-languages)
-    - [Writing Optimized Code](#writing-optimized-code)
-    - [WebAssembly](#webassembly)
-    - [Call Stack and Memory Heap](#call-stack-and-memory-heap)
-    - [Stack Overflow](#stack-overflow)
-    - [Garbage Collection](#garbage-collection)
-    - [Memory Leaks](#memory-leaks)
-    - [Single Threaded](#single-threaded)
-    - [Javascript Runtime](#javascript-runtime)
-    - [Node.js](#nodejs)
-    - [Advanced JavaScript Cheatsheet](#advanced-javascript-cheatsheet)
-    </details>
+    -   [Table of Contents](#table-of-contents)
 
-  - [**Section 3: Javascript Foundation II**](#section-3-javascript-foundation-ii)
-    <details>
-    <summary>Click to expand!</summary>
+    -   [**Section 1:Lists and examples for new Javascript features**](#section-1-lists-and-examples-for-new-Javascript-features)
+        <details>
+          <summary>Click to expand!</summary>
 
-    - [Execution Context](#execution-context)
-    - [Lexical Environment](#lexical-environment)
-    - [Lexical Environment vs Execution Context](#lexical-environment-vs-execution-context)
-    - [Hoisting](#hoisting)
-    - [Function Invocation](#function-invocation)
-    - [arguments Keyword](#arguments-keyword)
-    - [Variable Environment](#variable-environment)
-    - [Block](#block)
-    - [Variable Shadowing](#variable-shadowing)
-    - [Scope Chain](#scope-chain)
-    - [scope](#scope)
-    - [JS is Weird](#js-is-weird)
-    - [Function Scope vs Block Scope](#function-scope-vs-block-scope)
-    - [Global Variables](#global-variables)
-    - [IIFE](#iife)
-    - [this Keyword](#this-keyword)
-    - [new Keyword](#new-keyword)
-    - [Dynamic Scope vs Lexical Scope](#dynamic-scope-vs-lexical-scope)
-    - [call(), apply(), bind()](#call-apply-bind)
-    - [bind() and currying](#bind-and-currying)
-    - [Context vs Scope](#context-vs-scope)
-    </details>
+        -   [ES2015 (ES6) feature list and examples](<#es2015-(ES6)-feature-list-and-examples>)
+        -   [ES2016 feature list and examples](#es2016-feature-list-and-examples)
+        -   [ES2017 feature list and examples](#es2017-feature-list-and-examples)
+        -   [ES2018 feature list and examples](#es2017-feature-list-and-examples)
+        -   [ES2019 feature list and examples](#es2017-feature-list-and-examples)
+        </details>
 
-  - [**Section 4: Types in JavaScript**](#section-4-types-in-javascript)
-    <details>
-    <summary>Click to expand!</summary>
+    -   [**Section 2: JavaScript Foundation**](#section-2-javascript-foundation)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Fastest Way To Load JavaScript](#fastest-way-to-load-javaScript)
+        - [Javascript Engine](#javascript-engine)
+        - [Inside the Engine](#inside-the-engine)
+        - [Interpreters and Compilers](#interpreters-and-compilers)
+        - [Babel + TypeScript](#babel--typescript)
+        - [Inside the V8 Engine](#inside-the-v8-engine)
+        - [Comparing Other Languages](#comparing-other-languages)
+        - [Writing Optimized Code](#writing-optimized-code)
+        - [WebAssembly](#webassembly)
+        - [Call Stack and Memory Heap](#call-stack-and-memory-heap)
+        - [Stack Overflow](#stack-overflow)
+        - [Garbage Collection](#garbage-collection)
+        - [Memory Leaks](#memory-leaks)
+        - [Single Threaded](#single-threaded)
+        - [Javascript Runtime](#javascript-runtime)
+        - [Node.js](#nodejs)
+        - [Advanced JavaScript Cheatsheet](#advanced-javascript-cheatsheet)
+        </details>
 
-    - [Javascript Types](#javascript-types)
-    - [Array.isArray()](#arrayisarray)
-    - [Pass By Value vs Pass By Reference](#pass-by-value-vs-pass-by-reference)
-    - [Exercise: Compare Objects](#exercise-compare-objects)
-    - [Exercise: Pass By Reference](#exercise-pass-by-reference)
-    - [Type Coercion](#type-coercion)
-    </details>
+    -   [**Section 3: Javascript Foundation II**](#section-3-javascript-foundation-ii)
+        <details>
+        <summary>Click to expand!</summary>
 
-  - [**Section 5: The 2 Pillars: Closures and Prototypal Inheritance**](#section-5-the-2-pillars-closures-and-prototypal-inheritance)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Functions are callable Objects](#functions-are-callable-objects)
-    - [First Class Citizens](#first-class-citizens)
-    - [Extra Bits: Functions](#extra-bits-functions)
-    - [Higher Order Functions](#higher-order-functions)
-    - [Closures](#closures)
-    - [Closures and Memory](#closures-and-memory)
-    - [Closures and Encapsulation](#closures-and-encapsulation)
-    - [Closures Exercises and Solutions](#closures-exercises-and-solutions)
-    - [Prototypal Inheritance](#prototypal-inheritance)
-    - [Inherit the properties of parent object](#inherit-the-properties-of-parent-object)
-    - [Check proprties](#check-proprties)
-    - [Create our own prototypes](#create-our-own-prototypes)
-    - [Only functions has prototype property](#only-functions-has-prototype-property)
-    - [Exercise - extend the functionality of a built in object](#exercise---extend-the-functionality-of-a-built-in-object)
-    - [Prototypal Inheritance with this](#prototypal-inheritance-with-this)
-    - [Section Review](#section-review)
-    </details>
+        -   [Execution Context](#execution-context)
+        -   [Lexical Environment](#lexical-environment)
+        -   [Lexical Environment vs Execution Context](#lexical-environment-vs-execution-context)
+        -   [Hoisting](#hoisting)
+        -   [Function Invocation](#function-invocation)
+        -   [arguments Keyword](#arguments-keyword)
+        -   [Variable Environment](#variable-environment)
+        -   [Block](#block)
+        -   [Variable Shadowing](#variable-shadowing)
+        -   [Scope Chain](#scope-chain)
+        -   [scope](#scope)
+        -   [JS is Weird](#js-is-weird)
+        -   [Function Scope vs Block Scope](#function-scope-vs-block-scope)
+        -   [Global Variables](#global-variables)
+        -   [IIFE](#iife)
+        -   [this Keyword](#this-keyword)
+        -   [new Keyword](#new-keyword)
+        -   [Dynamic Scope vs Lexical Scope](#dynamic-scope-vs-lexical-scope)
+        -   [call(), apply(), bind()](#call-apply-bind)
+        -   [bind() and currying](#bind-and-currying)
+        -   [Context vs Scope](#context-vs-scope)
+        </details>
 
-  - [**Section 6: Object Oriented Programming**](#section-6-object-oriented-programming)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Section Overview](#section-overview)
-    - [OOP and FP](#oop-and-fp)
-    - [OOP Introduction](#oop-introduction)
-    - [OOP1: Factory Functions](#oop1-factory-functions)
-    - [OOP2: Object.create()](#oop2-objectcreate)
-    - [OOP3: Constructor Functions](#oop3-constructor-functions)
-    - [OOP4: ES6 Classes](#oop4-es6-classes)
-    - [this - 4 Ways](#this---4-ways)
-    - [Inheritance](#inheritance)
-    - [Public vs Private](#public-vs-private)
-    - [4 Pillars of OOP](#4-pillars-of-oop)
-    - [Exercise: OOP and Polymorphism](#exercise-oop-and-polymorphism)
-    </details>
+    -   [**Section 4: Types in JavaScript**](#section-4-types-in-javascript)
+        <details>
+        <summary>Click to expand!</summary>
 
-  - [**Section 7: Functional Programming**](#section-7-functional-programming)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Functional Programming Introduction](#functional-programming-introduction)
-    - [Exercise: Amazon shopping](#exercise-amazon-shopping)
-    - [Pure Functions](#pure-functions)
-    - [Can Everything Be Pure?](#can-everything-be-pure)
-    - [Idempotent](#idempotent)
-    - [Imperative vs Declarative](#imperative-vs-declarative)
-    - [Immutability](#immutability)
-    - [Higher Order Functions and Closures](#higher-order-functions-and-closures)
-    - [Currying](#currying)
-    - [Partial Application](#partial-application)
-    - [Compose and Pipe](#compose-and-pipe)
-    - [Arity](#arity)
-    - [Solution: Amazon](#solution-amazon)
-    </details>
+        -   [Javascript Types](#javascript-types)
+        -   [Array.isArray()](#arrayisarray)
+        -   [Pass By Value vs Pass By Reference](#pass-by-value-vs-pass-by-reference)
+        -   [Exercise: Compare Objects](#exercise-compare-objects)
+        -   [Exercise: Pass By Reference](#exercise-pass-by-reference)
+        -   [Type Coercion](#type-coercion)
+        </details>
 
-  - [**Section 8: OOP vs FP**](#section-8-oop-vs-fp)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Composition vs Inheritance](#composition-vs-inheritance)
-    - [OOP vs FP](#oop-vs-fp)
-    </details>
+    -   [**Section 5: The 2 Pillars: Closures and Prototypal Inheritance**](#section-5-the-2-pillars-closures-and-prototypal-inheritance)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Functions are callable Objects](#functions-are-callable-objects)
+        - [First Class Citizens](#first-class-citizens)
+        - [Extra Bits: Functions](#extra-bits-functions)
+        - [Higher Order Functions](#higher-order-functions)
+        - [Closures](#closures)
+        - [Closures and Memory](#closures-and-memory)
+        - [Closures and Encapsulation](#closures-and-encapsulation)
+        - [Closures Exercises and Solutions](#closures-exercises-and-solutions)
+        - [Prototypal Inheritance](#prototypal-inheritance)
+        - [Inherit the properties of parent object](#inherit-the-properties-of-parent-object)
+        - [Check proprties](#check-proprties)
+        - [Create our own prototypes](#create-our-own-prototypes)
+        - [Only functions has prototype property](#only-functions-has-prototype-property)
+        - [Exercise - extend the functionality of a built in object](#exercise---extend-the-functionality-of-a-built-in-object)
+        - [Prototypal Inheritance with this](#prototypal-inheritance-with-this)
+        - [Section Review](#section-review)
+        </details>
 
-  - [**Section 9: Asynchronous JavaScript**](#section-9-asynchronous-javascript)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Job Queue](#job-queue)
-    - [Parallel, Sequence and Race](#parallel-sequence-and-race)
-    - [Threads, Concurrency and Parallelism](#threads-concurrency-and-parallelism)
-    </details>
+    -   [**Section 6: Object Oriented Programming**](#section-6-object-oriented-programming)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Section Overview](#section-overview)
+        - [OOP and FP](#oop-and-fp)
+        - [OOP Introduction](#oop-introduction)
+        - [OOP1: Factory Functions](#oop1-factory-functions)
+        - [OOP2: Object.create()](#oop2-objectcreate)
+        - [OOP3: Constructor Functions](#oop3-constructor-functions)
+        - [OOP4: ES6 Classes](#oop4-es6-classes)
+        - [this - 4 Ways](#this---4-ways)
+        - [Inheritance](#inheritance)
+        - [Public vs Private](#public-vs-private)
+        - [4 Pillars of OOP](#4-pillars-of-oop)
+        - [Exercise: OOP and Polymorphism](#exercise-oop-and-polymorphism)
+        </details>
 
-  - [**Section 10: Modules In JavaScript**](#section-10-modules-in-javascript)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [What Is A Module?](#what-is-a-module)
-    - [Module Pattern](#module-pattern)
-    - [Module Pattern Pros and Cons](#module-pattern-pros-and-cons)
-    - [CommonJS, AMD, UMD](#commonjs-amd-umd)
-    - [ES6 Modules](#es6-modules)
-    </details>
+    -   [**Section 7: Functional Programming**](#section-7-functional-programming)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Functional Programming Introduction](#functional-programming-introduction)
+        - [Exercise: Amazon shopping](#exercise-amazon-shopping)
+        - [Pure Functions](#pure-functions)
+        - [Can Everything Be Pure?](#can-everything-be-pure)
+        - [Idempotent](#idempotent)
+        - [Imperative vs Declarative](#imperative-vs-declarative)
+        - [Immutability](#immutability)
+        - [Higher Order Functions and Closures](#higher-order-functions-and-closures)
+        - [Currying](#currying)
+        - [Partial Application](#partial-application)
+        - [Compose and Pipe](#compose-and-pipe)
+        - [Arity](#arity)
+        - [Solution: Amazon](#solution-amazon)
+        </details>
 
-  - [**Section 11: Error Handling**](#section-11-error-handling)
-    <details>
-    <summary>Click to expand!</summary>
-      
-    - [Errors In JavaScript](#errors-in-javascript)
-    - [Try Catch](#try-catch)
-    - [Async Error Handling](#async-error-handling)
-    - [Exercise: Error Handling](#exercise-error-handling)
-    - [Extending Errors](#extending-errors)
-    </details>
+    -   [**Section 8: OOP vs FP**](#section-8-oop-vs-fp)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Composition vs Inheritance](#composition-vs-inheritance)
+        - [OOP vs FP](#oop-vs-fp)
+        </details>
+
+    -   [**Section 9: Asynchronous JavaScript**](#section-9-asynchronous-javascript)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Job Queue](#job-queue)
+        - [Parallel, Sequence and Race](#parallel-sequence-and-race)
+        - [Threads, Concurrency and Parallelism](#threads-concurrency-and-parallelism)
+        </details>
+
+    -   [**Section 10: Modules In JavaScript**](#section-10-modules-in-javascript)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [What Is A Module?](#what-is-a-module)
+        - [Module Pattern](#module-pattern)
+        - [Module Pattern Pros and Cons](#module-pattern-pros-and-cons)
+        - [CommonJS, AMD, UMD](#commonjs-amd-umd)
+        - [ES6 Modules](#es6-modules)
+        </details>
+
+    -   [**Section 11: Error Handling**](#section-11-error-handling)
+        <details>
+        <summary>Click to expand!</summary>
+          
+        - [Errors In JavaScript](#errors-in-javascript)
+        - [Try Catch](#try-catch)
+        - [Async Error Handling](#async-error-handling)
+        - [Exercise: Error Handling](#exercise-error-handling)
+        - [Extending Errors](#extending-errors)
+        </details>
+
+## **Section 1: Lists and examples for new Javascript features**
+
+### ES2015 (ES6) feature list and examples
+
+<details>
+        <summary>Click to expand!</summary>
+
+    See the [ES2015 standard](http://www.ecma-international.org/ecma-262/6.0/) for full specification of the ECMAScript 6 language.
+
+    ES6 includes the following new features:
+
+    -   [arrows](#arrows)
+    -   [classes](#classes)
+    -   [enhanced object literals](#enhanced-object-literals)
+    -   [template strings](#template-strings)
+    -   [destructuring](#destructuring)
+    -   [default + rest + spread](#default--rest--spread)
+    -   [let + const](#let--const)
+    -   [iterators + for..of](#iterators--forof)
+    -   [generators](#generators)
+    -   [unicode](#unicode)
+    -   [modules](#modules)
+    -   [module loaders](#module-loaders)
+    -   [map + set + weakmap + weakset](#map--set--weakmap--weakset)
+    -   [proxies](#proxies)
+    -   [symbols](#symbols)
+    -   [subclassable built-ins](#subclassable-built-ins)
+    -   [promises](#promises)
+    -   [math + number + string + array + object APIs](#math--number--string--array--object-apis)
+    -   [binary and octal literals](#binary-and-octal-literals)
+    -   [reflect api](#reflect-api)
+    -   [tail calls](#tail-calls)
+
+    ## ECMAScript 6 Features
+
+    ### Arrows
+
+    Arrows are a function shorthand using the `=>` syntax. They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript. They support both statement block bodies as well as expression bodies which return the value of the expression. Unlike functions, arrows share the same lexical `this` as their surrounding code.
+
+    ```JavaScript
+    // Expression bodies
+    var odds = evens.map(v => v + 1);
+    var nums = evens.map((v, i) => v + i);
+    var pairs = evens.map(v => ({even: v, odd: v + 1}));
+
+    // Statement bodies
+    nums.forEach(v => {
+      if (v % 5 === 0)
+        fives.push(v);
+    });
+
+    // Lexical this
+    var bob = {
+      _name: "Bob",
+      _friends: [],
+      printFriends() {
+        this._friends.forEach(f =>
+          console.log(this._name + " knows " + f));
+      }
+    }
+    ```
+
+    More info: [MDN Arrow Functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+    ### Classes
+
+    ES6 classes are a simple sugar over the prototype-based OO pattern. Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability. Classes support prototype-based inheritance, super calls, instance and static methods and constructors.
+
+    ```JavaScript
+    class SkinnedMesh extends THREE.Mesh {
+      constructor(geometry, materials) {
+        super(geometry, materials);
+
+        this.idMatrix = SkinnedMesh.defaultMatrix();
+        this.bones = [];
+        this.boneMatrices = [];
+        //...
+      }
+      update(camera) {
+        //...
+        super.update();
+      }
+      get boneCount() {
+        return this.bones.length;
+      }
+      set matrixType(matrixType) {
+        this.idMatrix = SkinnedMesh[matrixType]();
+      }
+      static defaultMatrix() {
+        return new THREE.Matrix4();
+      }
+    }
+    ```
+
+    More info: [MDN Classes](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes)
+
+    ### Enhanced Object Literals
+
+    Object literals are extended to support setting the prototype at construction, shorthand for `foo: foo` assignments, defining methods, making super calls, and computing property names with expressions. Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.
+
+    ```JavaScript
+    var obj = {
+        // __proto__
+        __proto__: theProtoObj,
+        // Shorthand for ‘handler: handler’
+        handler,
+        // Methods
+        toString() {
+        // Super calls
+        return "d " + super.toString();
+        },
+        // Computed (dynamic) property names
+        [ 'prop_' + (() => 42)() ]: 42
+    };
+    ```
+
+    More info: [MDN Grammar and types: Object literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals)
+
+    ### Template Strings
+
+    Template strings provide syntactic sugar for constructing strings. This is similar to string interpolation features in Perl, Python and more. Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.
+
+    ```JavaScript
+    // Basic literal string creation
+    `In JavaScript '\n' is a line-feed.`
+
+    // Multiline strings
+    `In JavaScript this is
+    not legal.`
+
+    // String interpolation
+    var name = "Bob", time = "today";
+    `Hello ${name}, how are you ${time}?`
+
+    // Construct an HTTP request prefix is used to interpret the replacements and construction
+    POST`http://foo.org/bar?a=${a}&b=${b}
+        Content-Type: application/json
+        X-Credentials: ${credentials}
+        { "foo": ${foo},
+          "bar": ${bar}}`(myOnReadyStateChangeHandler);
+    ```
+
+    More info: [MDN Template Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings)
+
+    ### Destructuring
+
+    Destructuring allows binding using pattern matching, with support for matching arrays and objects. Destructuring is fail-soft, similar to standard object lookup `foo["bar"]`, producing `undefined` values when not found.
+
+    ```JavaScript
+    // list matching
+    var [a, , b] = [1,2,3];
+
+    // object matching
+    var { op: a, lhs: { op: b }, rhs: c }
+          = getASTNode()
+
+    // object matching shorthand
+    // binds `op`, `lhs` and `rhs` in scope
+    var {op, lhs, rhs} = getASTNode()
+
+    // Can be used in parameter position
+    function g({name: x}) {
+      console.log(x);
+    }
+    g({name: 5})
+
+    // Fail-soft destructuring
+    var [a] = [];
+    a === undefined;
+
+    // Fail-soft destructuring with defaults
+    var [a = 1] = [];
+    a === 1;
+    ```
+
+    More info: [MDN Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+
+    ### Default + Rest + Spread
+
+    Callee-evaluated default parameter values. Turn an array into consecutive arguments in a function call. Bind trailing parameters to an array. Rest replaces the need for `arguments` and addresses common cases more directly.
+
+    ```JavaScript
+    function f(x, y=12) {
+      // y is 12 if not passed (or passed as undefined)
+      return x + y;
+    }
+    f(3) == 15
+    ```
+
+    ```JavaScript
+    function f(x, ...y) {
+      // y is an Array
+      return x * y.length;
+    }
+    f(3, "hello", true) == 6
+    ```
+
+    ```JavaScript
+    function f(x, y, z) {
+      return x + y + z;
+    }
+    // Pass each elem of array as argument
+    f(...[1,2,3]) == 6
+    ```
+
+    More MDN info: [Default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters), [Rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters), [Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+
+    ### Let + Const
+
+    Block-scoped binding constructs. `let` is the new `var`. `const` is single-assignment. Static restrictions prevent use before assignment.
+
+    ```JavaScript
+    function f() {
+      {
+        let x;
+        {
+          // okay, block scoped name
+          const x = "sneaky";
+          // error, const
+          x = "foo";
+        }
+        // error, already declared in block
+        let x = "inner";
+      }
+    }
+    ```
+
+    More MDN info: [let statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), [const statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+    ### Iterators + For..Of
+
+    Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable. Generalize `for..in` to custom iterator-based iteration with `for..of`. Don’t require realizing an array, enabling lazy design patterns like LINQ.
+
+    ```JavaScript
+    let fibonacci = {
+      [Symbol.iterator]() {
+        let pre = 0, cur = 1;
+        return {
+          next() {
+            [pre, cur] = [cur, pre + cur];
+            return { done: false, value: cur }
+          }
+        }
+      }
+    }
+
+    for (var n of fibonacci) {
+      // truncate the sequence at 1000
+      if (n > 1000)
+        break;
+      console.log(n);
+    }
+    ```
+
+    Iteration is based on these duck-typed interfaces (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+
+    ```TypeScript
+    interface IteratorResult {
+      done: boolean;
+      value: any;
+    }
+    interface Iterator {
+      next(): IteratorResult;
+    }
+    interface Iterable {
+      [Symbol.iterator](): Iterator
+    }
+    ```
+
+    More info: [MDN for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+    ### Generators
+
+    Generators simplify iterator-authoring using `function*` and `yield`. A function declared as function\* returns a Generator instance. Generators are subtypes of iterators which include additional `next` and `throw`. These enable values to flow back into the generator, so `yield` is an expression form which returns a value (or throws).
+
+    Note: Can also be used to enable ‘await’-like async programming, see also ES7 `await` proposal.
+
+    ```JavaScript
+    var fibonacci = {
+      [Symbol.iterator]: function*() {
+        var pre = 0, cur = 1;
+        for (;;) {
+          var temp = pre;
+          pre = cur;
+          cur += temp;
+          yield cur;
+        }
+      }
+    }
+
+    for (var n of fibonacci) {
+      // truncate the sequence at 1000
+      if (n > 1000)
+        break;
+      console.log(n);
+    }
+    ```
+
+    The generator interface is (using [TypeScript](http://typescriptlang.org) type syntax for exposition only):
+
+    ```TypeScript
+    interface Generator extends Iterator {
+        next(value?: any): IteratorResult;
+        throw(exception: any);
+    }
+    ```
+
+    More info: [MDN Iteration protocols](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+
+    ### Unicode
+
+    Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp `u` mode to handle code points, as well as new APIs to process strings at the 21bit code points level. These additions support building global apps in JavaScript.
+
+    ```JavaScript
+    // same as ES5.1
+    "𠮷".length == 2
+
+    // new RegExp behaviour, opt-in ‘u’
+    "𠮷".match(/./u)[0].length == 2
+
+    // new form
+    "\u{20BB7}"=="𠮷"=="\uD842\uDFB7"
+
+    // new String ops
+    "𠮷".codePointAt(0) == 0x20BB7
+
+    // for-of iterates code points
+    for(var c of "𠮷") {
+      console.log(c);
+    }
+    ```
+
+    More info: [MDN RegExp.prototype.unicode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode)
+
+    ### Modules
+
+    Language-level support for modules for component definition. Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader. Implicitly async model – no code executes until requested modules are available and processed.
+
+    ```JavaScript
+    // lib/math.js
+    export function sum(x, y) {
+      return x + y;
+    }
+    export var pi = 3.141593;
+    ```
+
+    ```JavaScript
+    // app.js
+    import * as math from "lib/math";
+    alert("2π = " + math.sum(math.pi, math.pi));
+    ```
+
+    ```JavaScript
+    // otherApp.js
+    import {sum, pi} from "lib/math";
+    alert("2π = " + sum(pi, pi));
+    ```
+
+    Some additional features include `export default` and `export *`:
+
+    ```JavaScript
+    // lib/mathplusplus.js
+    export * from "lib/math";
+    export var e = 2.71828182846;
+    export default function(x) {
+        return Math.log(x);
+    }
+    ```
+
+    ```JavaScript
+    // app.js
+    import ln, {pi, e} from "lib/mathplusplus";
+    alert("2π = " + ln(e)*pi*2);
+    ```
+
+    More MDN info: [import statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import), [export statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+
+    ### Module Loaders
+
+    Module loaders support:
+
+    -   Dynamic loading
+    -   State isolation
+    -   Global namespace isolation
+    -   Compilation hooks
+    -   Nested virtualization
+
+    The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.
+
+    ```JavaScript
+    // Dynamic loading – ‘System’ is default loader
+    System.import('lib/math').then(function(m) {
+      alert("2π = " + m.sum(m.pi, m.pi));
+    });
+
+    // Create execution sandboxes – new Loaders
+    var loader = new Loader({
+      global: fixup(window) // replace ‘console.log’
+    });
+    loader.eval("console.log('hello world!');");
+
+    // Directly manipulate module cache
+    System.get('jquery');
+    System.set('jquery', Module({$: $})); // WARNING: not yet finalized
+    ```
+
+    ### Map + Set + WeakMap + WeakSet
+
+    Efficient data structures for common algorithms. WeakMaps provides leak-free object-key’d side tables.
+
+    ```JavaScript
+    // Sets
+    var s = new Set();
+    s.add("hello").add("goodbye").add("hello");
+    s.size === 2;
+    s.has("hello") === true;
+
+    // Maps
+    var m = new Map();
+    m.set("hello", 42);
+    m.set(s, 34);
+    m.get(s) == 34;
+
+    // Weak Maps
+    var wm = new WeakMap();
+    wm.set(s, { extra: 42 });
+    wm.size === undefined
+
+    // Weak Sets
+    var ws = new WeakSet();
+    ws.add({ data: 42 });
+    // Because the added object has no other references, it will not be held in the set
+    ```
+
+    More MDN info: [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map), [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set), [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap), [WeakSet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+
+    ### Proxies
+
+    Proxies enable creation of objects with the full range of behaviors available to host objects. Can be used for interception, object virtualization, logging/profiling, etc.
+
+    ```JavaScript
+    // Proxying a normal object
+    var target = {};
+    var handler = {
+      get: function (receiver, name) {
+        return `Hello, ${name}!`;
+      }
+    };
+
+    var p = new Proxy(target, handler);
+    p.world === 'Hello, world!';
+    ```
+
+    ```JavaScript
+    // Proxying a function object
+    var target = function () { return 'I am the target'; };
+    var handler = {
+      apply: function (receiver, ...args) {
+        return 'I am the proxy';
+      }
+    };
+
+    var p = new Proxy(target, handler);
+    p() === 'I am the proxy';
+    ```
+
+    There are traps available for all of the runtime-level meta-operations:
+
+    ```JavaScript
+    var handler =
+    {
+      get:...,
+      set:...,
+      has:...,
+      deleteProperty:...,
+      apply:...,
+      construct:...,
+      getOwnPropertyDescriptor:...,
+      defineProperty:...,
+      getPrototypeOf:...,
+      setPrototypeOf:...,
+      enumerate:...,
+      ownKeys:...,
+      preventExtensions:...,
+      isExtensible:...
+    }
+    ```
+
+    More info: [MDN Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
+
+    ### Symbols
+
+    Symbols enable access control for object state. Symbols allow properties to be keyed by either `string` (as in ES5) or `symbol`. Symbols are a new primitive type. Optional `description` parameter used in debugging - but is not part of identity. Symbols are unique (like gensym), but not private since they are exposed via reflection features like `Object.getOwnPropertySymbols`.
+
+    ```JavaScript
+    var MyClass = (function() {
+
+      // module scoped symbol
+      var key = Symbol("key");
+
+      function MyClass(privateData) {
+        this[key] = privateData;
+      }
+
+      MyClass.prototype = {
+        doStuff: function() {
+          ... this[key] ...
+        }
+      };
+
+      return MyClass;
+    })();
+
+    var c = new MyClass("hello")
+    c["key"] === undefined
+    ```
+
+    More info: [MDN Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+
+    ### Subclassable Built-ins
+
+    In ES6, built-ins like `Array`, `Date` and DOM `Element`s can be subclassed.
+
+    Object construction for a function named `Ctor` now uses two-phases (both virtually dispatched):
+
+    -   Call `Ctor[@@create]` to allocate the object, installing any special behavior
+    -   Invoke constructor on new instance to initialize
+
+    The known `@@create` symbol is available via `Symbol.create`. Built-ins now expose their `@@create` explicitly.
+
+    ```JavaScript
+    // Pseudo-code of Array
+    class Array {
+        constructor(...args) { /* ... */ }
+        static [Symbol.create]() {
+            // Install special [[DefineOwnProperty]]
+            // to magically update 'length'
+        }
+    }
+
+    // User code of Array subclass
+    class MyArray extends Array {
+        constructor(...args) { super(...args); }
+    }
+
+    // Two-phase 'new':
+    // 1) Call @@create to allocate object
+    // 2) Invoke constructor on new instance
+    var arr = new MyArray();
+    arr[1] = 12;
+    arr.length == 2
+    ```
+
+    ### Math + Number + String + Array + Object APIs
+
+    Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.
+
+    ```JavaScript
+    Number.EPSILON
+    Number.isInteger(Infinity) // false
+    Number.isNaN("NaN") // false
+
+    Math.acosh(3) // 1.762747174039086
+    Math.hypot(3, 4) // 5
+    Math.imul(Math.pow(2, 32) - 1, Math.pow(2, 32) - 2) // 2
+
+    "abcde".includes("cd") // true
+    "abc".repeat(3) // "abcabcabc"
+
+    Array.from(document.querySelectorAll('*')) // Returns a real Array
+    Array.of(1, 2, 3) // Similar to new Array(...), but without special one-arg behavior
+    [0, 0, 0].fill(7, 1) // [0,7,7]
+    [1, 2, 3].find(x => x == 3) // 3
+    [1, 2, 3].findIndex(x => x == 2) // 1
+    [1, 2, 3, 4, 5].copyWithin(3, 0) // [1, 2, 3, 1, 2]
+    ["a", "b", "c"].entries() // iterator [0, "a"], [1,"b"], [2,"c"]
+    ["a", "b", "c"].keys() // iterator 0, 1, 2
+    ["a", "b", "c"].values() // iterator "a", "b", "c"
+
+    Object.assign(Point, { origin: new Point(0,0) })
+    ```
+
+    More MDN info: [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number), [Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math), [Array.from](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from), [Array.of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of), [Array.prototype.copyWithin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin), [Object.assign](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+    ### Binary and Octal Literals
+
+    Two new numeric literal forms are added for binary (`b`) and octal (`o`).
+
+    ```JavaScript
+    0b111110111 === 503 // true
+    0o767 === 503 // true
+    ```
+
+    ### Promises
+
+    Promises are a library for asynchronous programming. Promises are a first class representation of a value that may be made available in the future. Promises are used in many existing JavaScript libraries.
+
+    ```JavaScript
+    function timeout(duration = 0) {
+        return new Promise((resolve, reject) => {
+            setTimeout(resolve, duration);
+        })
+    }
+
+    var p = timeout(1000).then(() => {
+        return timeout(2000);
+    }).then(() => {
+        throw new Error("hmm");
+    }).catch(err => {
+        return Promise.all([timeout(100), timeout(200)]);
+    })
+    ```
+
+    More info: [MDN Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
+    ### Reflect API
+
+    Full reflection API exposing the runtime-level meta-operations on objects. This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps. Especially useful for implementing proxies.
+
+    ```JavaScript
+    // No sample yet
+    ```
+
+    More info: [MDN Reflect](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+
+    ### Tail Calls
+
+    Calls in tail-position are guaranteed to not grow the stack unboundedly. Makes recursive algorithms safe in the face of unbounded inputs.
+
+    ```JavaScript
+    function factorial(n, acc = 1) {
+        if (n <= 1) return acc;
+        return factorial(n - 1, n * acc);
+    }
+
+    // Stack overflow in most implementations today,
+    // but safe on arbitrary inputs in ES6
+    factorial(100000)
+    ```
+
+</details>
+
+**[⬆ back to top](#table-of-contents)**
 
 ## **Section 2: JavaScript Foundation**
 
@@ -171,17 +827,17 @@
 
 ![](fastest-way-to-load-js.gif)
 
-- [defer vs async in html explaination](https://youtu.be/BMuFBYw91UQ)
+-   [defer vs async in html explaination](https://youtu.be/BMuFBYw91UQ)
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Javascript Engine
 
-- [List of ECMAScript engines](https://en.wikipedia.org/wiki)
-- [V8 JavaScript engine](https://v8.dev/)
-- [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich)
-- [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
-- [What’s the difference between JavaScript and ECMAScript?](https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/)
+-   [List of ECMAScript engines](https://en.wikipedia.org/wiki)
+-   [V8 JavaScript engine](https://v8.dev/)
+-   [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich)
+-   [SpiderMonkey](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey)
+-   [What’s the difference between JavaScript and ECMAScript?](https://www.freecodecamp.org/news/whats-the-difference-between-javascript-and-ecmascript-cba48c73a2b5/)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -190,10 +846,10 @@
 ![](js-engine-pipeline.svg)
 ![](memory-heap-call-stack.png)
 
-- [AST Explorer](https://astexplorer.net/)
-- [JavaScript engine fundamentals: Shapes and Inline Caches](https://mathiasbynens.be/notes/shapes-ics)
-- [What happens inside JavaScript Engine ?](https://www.geeksforgeeks.org/what-happens-inside-javascript-engine/)
-- [How JavaScript works](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+-   [AST Explorer](https://astexplorer.net/)
+-   [JavaScript engine fundamentals: Shapes and Inline Caches](https://mathiasbynens.be/notes/shapes-ics)
+-   [What happens inside JavaScript Engine ?](https://www.geeksforgeeks.org/what-happens-inside-javascript-engine/)
+-   [How JavaScript works](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
 
 ```javascript
 const jsengine = (code) => code.split(/\s+/);
@@ -204,12 +860,12 @@ jsengine("var a = 5");
 
 ### Interpreters and Compilers
 
-- Interpreter directly executes the instructions in the source programming language
-- compiler translates instructions into efficient machine code
-  - take one language and convert into a different one
-- [Compilers and Interpreters](https://medium.com/hackernoon/compilers-and-interpreters-3e354a2e41cf)
-- [A Deeper Inspection Into Compilation And Interpretation](https://medium.com/basecs/a-deeper-inspection-into-compilation-and-interpretation-d98952ebc842)
-- [Inside the Javascript Engine: Compiler and Interpreter](https://medium.com/@allansendagi/inside-the-javascript-engine-compiler-and-interpreter-c8faa638b0d9)
+-   Interpreter directly executes the instructions in the source programming language
+-   compiler translates instructions into efficient machine code
+    -   take one language and convert into a different one
+-   [Compilers and Interpreters](https://medium.com/hackernoon/compilers-and-interpreters-3e354a2e41cf)
+-   [A Deeper Inspection Into Compilation And Interpretation](https://medium.com/basecs/a-deeper-inspection-into-compilation-and-interpretation-d98952ebc842)
+-   [Inside the Javascript Engine: Compiler and Interpreter](https://medium.com/@allansendagi/inside-the-javascript-engine-compiler-and-interpreter-c8faa638b0d9)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -217,8 +873,8 @@ jsengine("var a = 5");
 
 Javascript compiler
 
-- [Babel](https://babeljs.io/)
-- [TypeScript](https://www.typescriptlang.org/)
+-   [Babel](https://babeljs.io/)
+-   [TypeScript](https://www.typescriptlang.org/)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -226,16 +882,16 @@ Javascript compiler
 
 JIT compiler = Interpreter + Compiler
 
-- It all starts with the JavaScript code you write. The JavaScript engine parses the source code and turns it into an Abstract Syntax Tree (AST). Based on that AST, the interpreter can start to do its thing and produce bytecode. Great! At that point the engine is actually running the JavaScript code.
-- To make it run faster, the bytecode can be sent to the optimizing compiler along with profiling data. The optimizing compiler makes certain assumptions based on the profiling data it has, and then produces highly-optimized machine code.
-- If at some point one of the assumptions turns out to be incorrect, the optimizing compiler deoptimizes and goes back to the interpreter.
+-   It all starts with the JavaScript code you write. The JavaScript engine parses the source code and turns it into an Abstract Syntax Tree (AST). Based on that AST, the interpreter can start to do its thing and produce bytecode. Great! At that point the engine is actually running the JavaScript code.
+-   To make it run faster, the bytecode can be sent to the optimizing compiler along with profiling data. The optimizing compiler makes certain assumptions based on the profiling data it has, and then produces highly-optimized machine code.
+-   If at some point one of the assumptions turns out to be incorrect, the optimizing compiler deoptimizes and goes back to the interpreter.
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Comparing Other Languages
 
-- Executable file: The product of the linking process. They are machine code which can be directly executed by the CPU.
-- [Machine code vs. Byte code vs. Object code vs. Source code vs. Assembly code vs. Executable code](https://medium.com/@rahul77349/machine-code-vs-byte-code-vs-object-code-vs-source-code-vs-assembly-code-812c9780f24c)
+-   Executable file: The product of the linking process. They are machine code which can be directly executed by the CPU.
+-   [Machine code vs. Byte code vs. Object code vs. Source code vs. Assembly code vs. Executable code](https://medium.com/@rahul77349/machine-code-vs-byte-code-vs-object-code-vs-source-code-vs-assembly-code-812c9780f24c)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -248,33 +904,33 @@ Memoization is a way to cache a return value of a funcBon based on its parameter
 
 Here are a few things you should avoid when writing your code if possible:
 
-- eval()
+-   eval()
 
-  - Reasons to Avoid Using eval()
+    -   Reasons to Avoid Using eval()
 
-    Unless you are doing really high-level JavaScript (see below) the risks usually outweigh the benefits of using eval(). Here’s some of the reasons to avoid using it:
+        Unless you are doing really high-level JavaScript (see below) the risks usually outweigh the benefits of using eval(). Here’s some of the reasons to avoid using it:
 
-    1. **Malicious code** : invoking eval can crash a computer. For example: if you use eval server-side and a mischievous user decides to use an infinite loop as their username.
+        1. **Malicious code** : invoking eval can crash a computer. For example: if you use eval server-side and a mischievous user decides to use an infinite loop as their username.
 
-    2. **Terribly slow** : the JavaScript language is designed to use the full gamut(The complete range or scope) of JavaScript types (numbers, functions, objects, etc)… Not just strings! Using eval is orders of magnitude slower than normal JavaScript code.
+        2. **Terribly slow** : the JavaScript language is designed to use the full gamut(The complete range or scope) of JavaScript types (numbers, functions, objects, etc)… Not just strings! Using eval is orders of magnitude slower than normal JavaScript code.
 
-- arguments
-- for in
-- with
-- delete
+-   arguments
+-   for in
+-   with
+-   delete
 
 There are a few main reasons these should be avoided.
 
-- Hidden classes
-- Inline caching
+-   Hidden classes
+-   Inline caching
 
 ```javascript
 // Inline caching
 const findUser = (user) => `Found ${user.firstName} ${user.lastName}`;
 
 const userData = {
-  firstName: "Johnson",
-  lastName: "Junior",
+    firstName: "Johnson",
+    lastName: "Junior",
 };
 
 // Code that executes the same method repeatedly will run faster than code that executes many different methods only once (due to inline caching).
@@ -284,9 +940,9 @@ findUser(userData);
 ```javascript
 // Hidden classes
 function Animal(x, y) {
-  //   Always instantiate your object properties in the same order so that hidden classes, and subsequently optimized code, can be shared.
-  this.x = x;
-  this.y = y;
+    //   Always instantiate your object properties in the same order so that hidden classes, and subsequently optimized code, can be shared.
+    this.x = x;
+    this.y = y;
 }
 
 const obj1 = new Animal(1, 2);
@@ -305,20 +961,20 @@ obj2.a = 100;
 
 Why not just use machine code from the beginning?
 
-- Compile code ahead of time or even just compiling the code on the browser was not feasiblea at all because back in the day that was really really slow
-- Impossible all the browsers agree on an executable format to run javascript
+-   Compile code ahead of time or even just compiling the code on the browser was not feasiblea at all because back in the day that was really really slow
+-   Impossible all the browsers agree on an executable format to run javascript
 
 In the future
 
-- [WebAssembly](https://webassembly.org/)
-- Standard binary executable format
+-   [WebAssembly](https://webassembly.org/)
+-   Standard binary executable format
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Call Stack and Memory Heap
 
-- Memory Heap: store and write information
-- Call Stack: keep track of where we are in the code
+-   Memory Heap: store and write information
+-   Call Stack: keep track of where we are in the code
 
 ```javascript
 // memory heap
@@ -326,9 +982,9 @@ In the future
 const number = 610; // allocate memory for number
 const string = "some text"; // allocate memory for a string
 const human = {
-  // allocate memory for an object and its value
-  first: "Chester",
-  last: "Heng",
+    // allocate memory for an object and its value
+    first: "Chester",
+    last: "Heng",
 };
 
 const subtractTwo = (num) => num - 2;
@@ -348,7 +1004,7 @@ const calculate = () => subtractTwo(4 + 5);
 // When a function calls itself,
 // it is called RECURSION
 function inception() {
-  inception();
+    inception();
 }
 
 inception();
@@ -360,16 +1016,16 @@ inception();
 
 ### Garbage Collection
 
-- [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
-- [Garbage collection](https://javascript.info/garbage-collection)
-- [Understanding JavaScript Memory Management using Garbage Collection](https://medium.com/front-end-weekly/understanding-javascript-memory-management-using-garbage-collection-35ed4954a67f)
+-   [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+-   [Garbage collection](https://javascript.info/garbage-collection)
+-   [Understanding JavaScript Memory Management using Garbage Collection](https://medium.com/front-end-weekly/understanding-javascript-memory-management-using-garbage-collection-35ed4954a67f)
 
 ![](mark-and-sweep-garbage-collector-algorithm.gif)
 
 ```javascript
 var person = {
-  first: "Brittney",
-  last: "Postma",
+    first: "Brittney",
+    last: "Postma",
 };
 person = "Brittney Postma";
 ```
@@ -378,14 +1034,14 @@ person = "Brittney Postma";
 
 ### Memory Leaks
 
-- [Garbage Collection in Redux Applications](https://developers.soundcloud.com/blog/garbage-collection-in-redux-applications)
-- [Global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object)
+-   [Garbage Collection in Redux Applications](https://developers.soundcloud.com/blog/garbage-collection-in-redux-applications)
+-   [Global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object)
 
 ```javascript
 // infinite loop
 let array = [];
 for (let i = 5; i > 1; i++) {
-  array.push(i - 1);
+    array.push(i - 1);
 }
 
 // global variable
@@ -394,8 +1050,8 @@ var b = 1;
 var c = 1;
 
 var person = {
-  first: "Brittney",
-  last: "Postma",
+    first: "Brittney",
+    last: "Postma",
 };
 person = "Brittney Postma";
 
@@ -405,7 +1061,7 @@ element.addEventListener("click", onClick);
 
 // setInterval
 setInterval(() => {
-  // reference objec
+    // reference objec
 });
 ```
 
@@ -413,11 +1069,11 @@ setInterval(() => {
 
 ### Single Threaded
 
-- Only one thing can be executed at a time
-- Javascript only has one call stack
-- Javascript is a synchronous language
-  - Imagine an alert on the page
-  - Block the user from accessing any part of the page until the OK button is clicked
+-   Only one thing can be executed at a time
+-   Javascript only has one call stack
+-   Javascript is a synchronous language
+    -   Imagine an alert on the page
+    -   Block the user from accessing any part of the page until the OK button is clicked
 
 This is where concurrency and the event loop come in.
 
@@ -425,15 +1081,15 @@ This is where concurrency and the event loop come in.
 
 ### Javascript Runtime
 
-- [The Javascript Runtime Environment](https://medium.com/@olinations/the-javascript-runtime-environment-d58fa2e60dd0)
-- [JS Runtime Playground](http://latentflip.com/loupe)
-- [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
-  - see window global object for all Web APIs methods
-- All synchronous code will be pushed to Call Stack and execute in sequence
-- Asynchronous Web APIs code will be executed by browser in the background in sequence
-- Browser will store all Callback functions in Callback Queue
-- Event Loop check for empty Call Stack to make sure all synchronous code has completed execution
-  - Push Callback functions in Callback Queue to Call Stack and start execution
+-   [The Javascript Runtime Environment](https://medium.com/@olinations/the-javascript-runtime-environment-d58fa2e60dd0)
+-   [JS Runtime Playground](http://latentflip.com/loupe)
+-   [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
+    -   see window global object for all Web APIs methods
+-   All synchronous code will be pushed to Call Stack and execute in sequence
+-   Asynchronous Web APIs code will be executed by browser in the background in sequence
+-   Browser will store all Callback functions in Callback Queue
+-   Event Loop check for empty Call Stack to make sure all synchronous code has completed execution
+    -   Push Callback functions in Callback Queue to Call Stack and start execution
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -441,23 +1097,23 @@ This is where concurrency and the event loop come in.
 
 Summary
 
-- I/O Intensive
-- Non-blocking I/O
+-   I/O Intensive
+-   Non-blocking I/O
 
 References
 
-- [Introduction to Node.js / A beginners guide to Node.js and NPM](https://itnext.io/introduction-to-node-js-a-beginners-guide-to-node-js-and-npm-eca9c408f9fe)
-- [How Node.js Works](https://www.youtube.com/watch?v=jOupHNvDIq8)
-- [How Node JS Works?](https://www.youtube.com/watch?v=YSyFSnisip0)
-- [Global Objects](https://nodejs.org/api/globals.html#globals_global_objects)
-- [10 Things I Regret About Node.js](https://www.youtube.com/watch?v=M3BM9TB-8yA)
+-   [Introduction to Node.js / A beginners guide to Node.js and NPM](https://itnext.io/introduction-to-node-js-a-beginners-guide-to-node-js-and-npm-eca9c408f9fe)
+-   [How Node.js Works](https://www.youtube.com/watch?v=jOupHNvDIq8)
+-   [How Node JS Works?](https://www.youtube.com/watch?v=YSyFSnisip0)
+-   [Global Objects](https://nodejs.org/api/globals.html#globals_global_objects)
+-   [10 Things I Regret About Node.js](https://www.youtube.com/watch?v=M3BM9TB-8yA)
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Advanced JavaScript Cheatsheet
 
-- [JavaScript Cheat Sheet: The Advanced Concepts](https://zerotomastery.io/courses/advanced-javascript/cheatsheet/)
-- [JavaScript Cheat Sheet: The Advanced Concepts PDF](ztm-javascript-cheatsheet.pdf)
+-   [JavaScript Cheat Sheet: The Advanced Concepts](https://zerotomastery.io/courses/advanced-javascript/cheatsheet/)
+-   [JavaScript Cheat Sheet: The Advanced Concepts PDF](ztm-javascript-cheatsheet.pdf)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -469,14 +1125,14 @@ Global Execution Context
 
 Creation Phase
 
-- Global object created: window
-- Initializes this keyword to global
-- window === this
+-   Global object created: window
+-   Initializes this keyword to global
+-   window === this
 
 Executing Phase
 
-- Variable Environment created - memory space for var variables and functions created
-- Initializes all variables to undefined (also known as hoistng) and places them with any functions into memory
+-   Variable Environment created - memory space for var variables and functions created
+-   Initializes all variables to undefined (also known as hoistng) and places them with any functions into memory
 
 ```javascript
 this;
@@ -488,19 +1144,19 @@ this === window;
 
 ### Lexical Environment
 
-- lexical environment: the scope or environment the engine is currently reading code in
-  - a new lexical environment is created when curly brackets {} are used
-- lexical scope: available data + variables where function was defined
-- dynamic scope: where function is called
+-   lexical environment: the scope or environment the engine is currently reading code in
+    -   a new lexical environment is created when curly brackets {} are used
+-   lexical scope: available data + variables where function was defined
+-   dynamic scope: where function is called
 
 ```javascript
 function one() {
-  var isValid = true; // local env
-  two(); // new execution context
+    var isValid = true; // local env
+    two(); // new execution context
 }
 
 function two() {
-  var isValid; // undefined
+    var isValid; // undefined
 }
 
 var isValid = false; // global
@@ -519,11 +1175,11 @@ one();
 
 The best way to think of an execution context is as a stack frame, while lexical environments are indeed the scopes.
 
-- Execution contexts contain the current evaluation state of code, a reference to the code (function) itself, and possibly references to the current lexical environments.
-  Execution contexts are managed in a stack.
+-   Execution contexts contain the current evaluation state of code, a reference to the code (function) itself, and possibly references to the current lexical environments.
+    Execution contexts are managed in a stack.
 
-- Lexical environments contain an environment record in which the variables are stored, and a reference to their parent environment (if any).
-  Lexical environments build a tree structure.
+-   Lexical environments contain an environment record in which the variables are stored, and a reference to their parent environment (if any).
+    Lexical environments build a tree structure.
 
 With every change of the execution context, the lexical environment changes as well. However the lexical environment may change independently from that as well, for example when entering a block.
 
@@ -531,18 +1187,18 @@ With every change of the execution context, the lexical environment changes as w
 
 ### Hoisting
 
-- Hoisting is the process of putting all variable and function declarations into memory during the compile phase
-  - functions are fully hoisted
-  - var variables are hoisted and initialized to undefined
-  - let and const variables are hoisted but not initialized a value
+-   Hoisting is the process of putting all variable and function declarations into memory during the compile phase
+    -   functions are fully hoisted
+    -   var variables are hoisted and initialized to undefined
+    -   let and const variables are hoisted but not initialized a value
 
 ```javascript
 var favouriteFood = "grapes";
 
 var foodThoughts = function () {
-  console.log("Original favourite food: " + favouriteFood);
-  var favouriteFood = "sushi";
-  console.log("New favourite food: " + favouriteFood);
+    console.log("Original favourite food: " + favouriteFood);
+    var favouriteFood = "sushi";
+    console.log("New favourite food: " + favouriteFood);
 };
 
 foodThoughts();
@@ -557,9 +1213,9 @@ var foodThoughts = undefined;
 // Executing Phase
 favouriteFood = "grapes";
 foodThoughts = function () {
-  console.log("Original favourite food: " + favouriteFood);
-  var favouriteFood = "sushi";
-  console.log("New favourite food: " + favouriteFood);
+    console.log("Original favourite food: " + favouriteFood);
+    var favouriteFood = "sushi";
+    console.log("New favourite food: " + favouriteFood);
 };
 ```
 
@@ -587,7 +1243,7 @@ var canada = () => console.log("cold");
 
 // Function Declaration
 function india() {
-  console.log("warm");
+    console.log("warm");
 }
 
 // Function Invocation / Call / Execution
@@ -597,17 +1253,17 @@ india();
 
 Functional Execution Context
 
-- Only when a function is invoked, does a function execution context get created
+-   Only when a function is invoked, does a function execution context get created
 
 Creation Phase
 
-- Argument object created with any arguments
-- Initializes this keyword to point called or to the global object if not specified
+-   Argument object created with any arguments
+-   Initializes this keyword to point called or to the global object if not specified
 
 Executing Phase
 
-- Variable Environment created - memory space for variable and functions created
-- Initializes all variables to undefined and places them into memory with any new functions
+-   Variable Environment created - memory space for variable and functions created
+-   Initializes all variables to undefined and places them into memory with any new functions
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -615,19 +1271,19 @@ Executing Phase
 
 ```javascript
 function showArgs(arg1, arg2) {
-  console.log("arguments: ", arguments);
-  console.log(Array.from(arguments));
+    console.log("arguments: ", arguments);
+    console.log(Array.from(arguments));
 }
 showArgs("hello", "world");
 
 function showArgs2(...args) {
-  console.log("arguments: ", args);
-  console.log(args[0], args[1]);
+    console.log("arguments: ", args);
+    console.log(args[0], args[1]);
 }
 showArgs2("hello", "world");
 
 function noArgs() {
-  console.log("arguments: ", arguments);
+    console.log("arguments: ", arguments);
 }
 noArgs();
 ```
@@ -650,12 +1306,12 @@ inside a function, variable decleared with var keyword will get partially hoiste
 
 ```javascript
 function two() {
-  var isValid;
+    var isValid;
 }
 
 function one() {
-  var isValid = true;
-  two();
+    var isValid = true;
+    two();
 }
 
 var isValid = false;
@@ -690,10 +1346,10 @@ example:
 
 ```javascript
 {
-  //combined statement
-  var a = 10;
-  var b = 15;
-  a + b;
+    //combined statement
+    var a = 10;
+    var b = 15;
+    a + b;
 }
 ```
 
@@ -701,7 +1357,7 @@ if we talk about statement. then we can say that
 
 ```javascript
 {
-  if (true); //statement
+    if (true); //statement
 }
 ```
 
@@ -719,10 +1375,10 @@ var shadowing example
 ```javascript
 var a = 100;
 {
-  var a = 5;
-  let b = 10;
-  const c = 15;
-  console.log(a); // 5
+    var a = 5;
+    let b = 10;
+    const c = 15;
+    console.log(a); // 5
 }
 console.log(a); // 100
 ```
@@ -732,10 +1388,10 @@ let and const shadowing example:
 ```javascript
 let b = 200;
 {
-  var a = 5;
-  let b = 10;
-  const c = 15;
-  console.log(b); // 10
+    var a = 5;
+    let b = 10;
+    const c = 15;
+    console.log(b); // 10
 }
 console.log(b); // 200
 ```
@@ -745,9 +1401,9 @@ lets see example of illegal shadowing
 ```javascript
 let a = 100;
 {
-  var a = 5;
+    var a = 5;
 
-  console.log(a);
+    console.log(a);
 }
 console.log(a);
 // it will show an error
@@ -759,10 +1415,10 @@ This rules are same for functions and arrow functions.
 ```javascript
 var a = 100;
 function fun() {
-  var a = 5;
-  let b = 10;
-  const c = 15;
-  console.log(a); // 5
+    var a = 5;
+    let b = 10;
+    const c = 15;
+    console.log(a); // 5
 }
 console.log(a); // 100
 ```
@@ -771,24 +1427,24 @@ console.log(a); // 100
 
 ### Scope Chain
 
-- Lexical Environment === [[scope]]
-- outer scope === [[scope]]
+-   Lexical Environment === [[scope]]
+-   outer scope === [[scope]]
 
 ```javascript
 // Scope defines the accessibility of variables and functions in the code
 // Global Scope is the outer most scope
 function sayMyName() {
-  var a = "a";
-  return function findName() {
-    var b = "b";
-    console.log(a);
-    return function printName() {
-      var c = "c";
-      console.log(a);
-      console.log(b);
-      return "Andrei Neagoie";
+    var a = "a";
+    return function findName() {
+        var b = "b";
+        console.log(a);
+        return function printName() {
+            var c = "c";
+            console.log(a);
+            console.log(b);
+            return "Andrei Neagoie";
+        };
     };
-  };
 }
 
 sayMyName()()();
@@ -820,7 +1476,7 @@ function a() {}
 // Global scope says: ummm... no but here I just created it for you.
 // We call this leakage of global variables.
 function weird() {
-  height = 50;
+    height = 50;
 }
 
 weird();
@@ -830,7 +1486,7 @@ weird();
 // leakage of global variables is not allowed
 "use strict";
 function weird() {
-  height = 50;
+    height = 50;
 }
 
 weird();
@@ -838,7 +1494,7 @@ weird();
 
 ```javascript
 var heyhey = function doodle() {
-  return "heyhey";
+    return "heyhey";
 };
 
 heyhey();
@@ -852,18 +1508,18 @@ doodle(); // Error! because it is enclosed in its own scope.
 ```javascript
 // Function Scope
 function loop() {
-  for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 5; i++) {
+        console.log(i);
+    }
     console.log(i);
-  }
-  console.log(i);
 }
 
 // Block Scope
 function loop2() {
-  for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+    }
     console.log(i);
-  }
-  console.log(i);
 }
 ```
 
@@ -915,7 +1571,7 @@ this is the object that the function is a property of
 
 ```javascript
 function a() {
-  console.log(this); // this refer to window object
+    console.log(this); // this refer to window object
 }
 
 const b = () => console.log(this); // this refer to window object
@@ -927,13 +1583,13 @@ b();
 ```javascript
 // gives methods access to their object
 const obj = {
-  name: "Billy",
-  sing: function () {
-    return "llala " + this.name + "!";
-  },
-  singAgain: function () {
-    return this.sing();
-  },
+    name: "Billy",
+    sing: function () {
+        return "llala " + this.name + "!";
+    },
+    singAgain: function () {
+        return this.sing();
+    },
 };
 
 obj.singAgain();
@@ -942,7 +1598,7 @@ obj.singAgain();
 ```javascript
 // execute some code for multiple objects
 function importantPerson() {
-  console.log(this.name);
+    console.log(this.name);
 }
 
 importantPerson(); // this refer to window object
@@ -957,26 +1613,26 @@ obj2.importantPerson(); // Jacob
 
 ```javascript
 var b = {
-  name: "jay",
-  say() {
-    console.log(this);
-  },
+    name: "jay",
+    say() {
+        console.log(this);
+    },
 };
 
 var c = {
-  name: "jay",
-  say() {
-    return function () {
-      console.log(this);
-    };
-  },
+    name: "jay",
+    say() {
+        return function () {
+            console.log(this);
+        };
+    },
 };
 
 var d = {
-  name: "jay",
-  say() {
-    return () => console.log(this);
-  },
+    name: "jay",
+    say() {
+        return () => console.log(this);
+    },
 };
 
 b.say(); // this refer to b object
@@ -986,10 +1642,10 @@ d.say()(); // this refer to b object
 
 ```javascript
 const character = {
-  name: "Simon",
-  getCharacter() {
-    return this.name;
-  },
+    name: "Simon",
+    getCharacter() {
+        return this.name;
+    },
 };
 
 const giveMeTheCharacterNOW = character.getCharacter.bind(character);
@@ -1000,23 +1656,23 @@ giveMeTheCharacterNOW();
 
 ### new Keyword
 
-- object can be created with new keyword.
+-   object can be created with new keyword.
 
 ```javascript
 function MyFunc() {
-  this.x = 100;
+    this.x = 100;
 }
 
 var obj1 = new MyFunc();
 obj1.x;
 ```
 
-- MyFunc() is called a constructor function. The new keyword constructs and returns an object (instance) of a constructor function.
-- The new keyword performs following four tasks:
-  1. It creates new empty object e.g. obj = { };
-  2. It sets new empty object's invisible 'prototype' property to be the constructor function's visible and accessible 'prototype' property. (Every function has visible 'prototype' property whereas every object includes invisible 'prototype' property).
-  3. It binds property or function which is declared with this keyword to the new object.
-  4. It returns newly created object unless the constructor function returns a non-primitive value (custom JavaScript object). If constructor function does not include return statement then compiler will insert 'return this;' implicitly at the end of the function. If the constructor function returns a primitive value then it will be ignored.
+-   MyFunc() is called a constructor function. The new keyword constructs and returns an object (instance) of a constructor function.
+-   The new keyword performs following four tasks:
+    1. It creates new empty object e.g. obj = { };
+    2. It sets new empty object's invisible 'prototype' property to be the constructor function's visible and accessible 'prototype' property. (Every function has visible 'prototype' property whereas every object includes invisible 'prototype' property).
+    3. It binds property or function which is declared with this keyword to the new object.
+    4. It returns newly created object unless the constructor function returns a non-primitive value (custom JavaScript object). If constructor function does not include return statement then compiler will insert 'return this;' implicitly at the end of the function. If the constructor function returns a primitive value then it will be ignored.
 
 ```JavaScript
 //Example: new keyword
@@ -1034,13 +1690,13 @@ obj1.y; // 200
 
 Let's understand what happens when you create an object (instance) of MyFunc() using new keyword.
 
-- First of all, new keyword creates an empty object - { }.
+-   First of all, new keyword creates an empty object - { }.
 
-- Second, it set's invisible 'prototype' property (or attribute) of this empty object to myFunc's prototype property. As you can see in the above example, we have assigned new property 'y' using MyFunc.prototype.y. So, new empty object will also have same prototype property as MyFunc which includes y property.
+-   Second, it set's invisible 'prototype' property (or attribute) of this empty object to myFunc's prototype property. As you can see in the above example, we have assigned new property 'y' using MyFunc.prototype.y. So, new empty object will also have same prototype property as MyFunc which includes y property.
 
-- In third step, it binds all the properties and function declared with this keyword to new empty object. Here, MyFunc includes only one property x which is declared with this keyword. So new empty object will now include x property. MyFunc also includes myVar variable which does not declared with this keyword. So myVar will not be included in new object.
+-   In third step, it binds all the properties and function declared with this keyword to new empty object. Here, MyFunc includes only one property x which is declared with this keyword. So new empty object will now include x property. MyFunc also includes myVar variable which does not declared with this keyword. So myVar will not be included in new object.
 
-- In the fourth and last step, it will return this newly created object. MyFunc does not include return statement but compiler will implicitly insert 'return this' at the end.
+-   In the fourth and last step, it will return this newly created object. MyFunc does not include return statement but compiler will implicitly insert 'return this' at the end.
 
 The following figure illustrates the above process.
 
@@ -1081,9 +1737,9 @@ Thus, new keyword builds an object of a function in JavaScript.
 
 ### Dynamic Scope vs Lexical Scope
 
-- lexical scope: available data + variables where function was defined
-- dynamic scope: where function is called
-  - this keyword is dynamic scope
+-   lexical scope: available data + variables where function was defined
+-   dynamic scope: where function is called
+    -   this keyword is dynamic scope
 
 | Lexical scope                 | Dynamic Scope                    |
 | ----------------------------- | -------------------------------- |
@@ -1092,17 +1748,17 @@ Thus, new keyword builds an object of a function in JavaScript.
 
 ```javascript
 const a = function () {
-  console.log("a", this); // this refer to window object
-  const b = function () {
-    console.log("b", this); // this refer to window object
-    const c = {
-      hi: function () {
-        console.log("c", this); /// this refer to c object
-      },
+    console.log("a", this); // this refer to window object
+    const b = function () {
+        console.log("b", this); // this refer to window object
+        const c = {
+            hi: function () {
+                console.log("c", this); /// this refer to c object
+            },
+        };
+        c.hi();
     };
-    c.hi();
-  };
-  b();
+    b();
 };
 
 a();
@@ -1110,55 +1766,55 @@ a();
 
 ```javascript
 const obj = {
-  name: "Billy",
-  sing: function () {
-    console.log("a", this); // refer to obj object
-    const anotherFunc = function () {
-      console.log("b", this); // refer to window object
-    };
-  },
+    name: "Billy",
+    sing: function () {
+        console.log("a", this); // refer to obj object
+        const anotherFunc = function () {
+            console.log("b", this); // refer to window object
+        };
+    },
 };
 obj.sing();
 ```
 
 ```javascript
 const obj = {
-  name: "Billy",
-  sing() {
-    console.log("a", this); // refer to obj object
-    // arrow function is lexical bound
-    const anotherFunc = () => console.log("b", this); // refer to obj object
-    anotherFunc();
-  },
+    name: "Billy",
+    sing() {
+        console.log("a", this); // refer to obj object
+        // arrow function is lexical bound
+        const anotherFunc = () => console.log("b", this); // refer to obj object
+        anotherFunc();
+    },
 };
 obj.sing();
 ```
 
 ```javascript
 const obj = {
-  name: "Billy",
-  sing() {
-    console.log("a", this); // refer to obj object
-    const anotherFunc = function () {
-      console.log("b", this); // refer to obj object
-    };
-    return anotherFunc.bind(this);
-  },
+    name: "Billy",
+    sing() {
+        console.log("a", this); // refer to obj object
+        const anotherFunc = function () {
+            console.log("b", this); // refer to obj object
+        };
+        return anotherFunc.bind(this);
+    },
 };
 obj.sing()();
 ```
 
 ```javascript
 const obj = {
-  name: "Billy",
-  sing() {
-    console.log("a", this); // refer to obj object
-    const self = this;
-    const anotherFunc = function () {
-      console.log("b", self); // refer to obj object
-    };
-    return anotherFunc;
-  },
+    name: "Billy",
+    sing() {
+        console.log("a", this); // refer to obj object
+        const self = this;
+        const anotherFunc = function () {
+            console.log("b", self); // refer to obj object
+        };
+        return anotherFunc;
+    },
 };
 obj.sing()();
 ```
@@ -1169,7 +1825,7 @@ obj.sing()();
 
 ```javascript
 function a() {
-  console.log("hi");
+    console.log("hi");
 }
 a();
 a.call();
@@ -1178,16 +1834,16 @@ a.apply();
 
 ```javascript
 const wizard = {
-  name: "Merlin",
-  health: 100,
-  heal(num1, num2) {
-    this.health += num1 + num2;
-  },
+    name: "Merlin",
+    health: 100,
+    heal(num1, num2) {
+        this.health += num1 + num2;
+    },
 };
 
 const archer = {
-  name: "Robin Hood",
-  health: 50,
+    name: "Robin Hood",
+    health: 50,
 };
 
 wizard.heal(10, 60);
@@ -1205,7 +1861,7 @@ healArcher();
 const array = [1, 2, 3];
 
 function getMaxNumber(arr) {
-  return Math.max.apply(null, arr);
+    return Math.max.apply(null, arr);
 }
 
 const getMaxNumber = (arr) => Math.max.apply(null, arr);
@@ -1217,22 +1873,22 @@ getMaxNumber(array);
 
 ### bind() and currying
 
-- translates a function from callable as f(a, b, c) into callable as f(a)(b)(c)
-- [Currying](https://javascript.info/currying-partials)
-- [Currying: A Functional Alternative To fn.bind](https://derickbailey.com/2016/06/24/currying-a-functional-alternative-to-fn-bind/)
+-   translates a function from callable as f(a, b, c) into callable as f(a)(b)(c)
+-   [Currying](https://javascript.info/currying-partials)
+-   [Currying: A Functional Alternative To fn.bind](https://derickbailey.com/2016/06/24/currying-a-functional-alternative-to-fn-bind/)
 
 ```javascript
 function sum(a, b) {
-  return a + b;
+    return a + b;
 }
 
 // curry(f) does the currying transform
 function curry(f) {
-  return function (a) {
-    return function (b) {
-      return f(a, b);
+    return function (a) {
+        return function (b) {
+            return f(a, b);
+        };
     };
-  };
 }
 
 let curriedSum = curry(sum);
@@ -1242,7 +1898,7 @@ curriedSum(1)(2);
 
 ```javascript
 function multiply(a, b, c) {
-  return a * b * c;
+    return a * b * c;
 }
 
 const multipleByTwo = multiply.bind(this, 2, 4);
@@ -1256,14 +1912,14 @@ console.log(multipleByThree(4));
 
 ### Context vs Scope
 
-- [Understanding Scope and Context in JavaScript](http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
-- Scope is function based
-  - what is the variable access of a function when it is invoked?
-  - What is in the variable environment?
-  - scope refers to the visibility of variables
-- Context is object based
-  - what is the value of this keyword?
-  - context is most often determined by how a function is invoked with the value of this keyword
+-   [Understanding Scope and Context in JavaScript](http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
+-   Scope is function based
+    -   what is the variable access of a function when it is invoked?
+    -   What is in the variable environment?
+    -   scope refers to the visibility of variables
+-   Context is object based
+    -   what is the value of this keyword?
+    -   context is most often determined by how a function is invoked with the value of this keyword
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1296,9 +1952,9 @@ As you can clearly see, Both values are different that clearly proves that value
 
 **Reference Types**
 
-- Now you can probably guess about Reference types. It consists of Array, Object, and Function.
-- In the case of Reference types Variables actually don't have the actual values but it contains a reference to that particular value.
-- Here, Reference simply means a pointer to another memory location that holds particular value. This might be sound confusing for you at first glance but bear with me. Once you go through it would be very clear to you.
+-   Now you can probably guess about Reference types. It consists of Array, Object, and Function.
+-   In the case of Reference types Variables actually don't have the actual values but it contains a reference to that particular value.
+-   Here, Reference simply means a pointer to another memory location that holds particular value. This might be sound confusing for you at first glance but bear with me. Once you go through it would be very clear to you.
 
 ```javascript
 // Non-Primitive
@@ -1308,12 +1964,12 @@ typeof [];
 typeof function () {};
 
 const obj1 = {
-  a: "Tom",
+    a: "Tom",
 };
 
 // function and array are objects
 function a() {
-  return 5;
+    return 5;
 }
 a.hi = "hi";
 
@@ -1344,9 +2000,9 @@ So this behavior is implemented to save time and memory both.
 ```javascript
 const array = ["1", "2", "3"];
 const obj = {
-  0: "1",
-  1: "2",
-  2: "3",
+    0: "1",
+    1: "2",
+    2: "3",
 };
 
 Array.isArray(array);
@@ -1397,18 +2053,18 @@ JSON.stringify(user1) === JSON.stringify(user2);
 const number = 100;
 const string = "Jay";
 let obj1 = {
-  value: "a",
+    value: "a",
 };
 let obj2 = {
-  value: "b",
+    value: "b",
 };
 let obj3 = obj2;
 
 function change(number, string, obj1, obj2) {
-  number = number * 10;
-  string = "Pete";
-  obj1 = obj2;
-  obj2.value = "c";
+    number = number * 10;
+    string = "Pete";
+    obj1 = obj2;
+    obj2.value = "c";
 }
 
 change(number, string, obj1, obj2);
@@ -1425,18 +2081,18 @@ change(number, string, obj1, obj2);
 
 ### Type Coercion
 
-- [JS Comparison Table](https://dorey.github.io/JavaScript-Equality-Table/)
-- [Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
-- [The Abstract Equality Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
+-   [JS Comparison Table](https://dorey.github.io/JavaScript-Equality-Table/)
+-   [Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+-   [The Abstract Equality Comparison Algorithm](https://www.ecma-international.org/ecma-262/5.1/#sec-11.9.3)
 
 ```javascript
 if (1) {
-  // true
-  console.log(5);
+    // true
+    console.log(5);
 }
 if (0) {
-  // false
-  console.log(5);
+    // false
+    console.log(5);
 }
 ```
 
@@ -1449,16 +2105,16 @@ if (0) {
 ```javascript
 // Invoke function
 function one() {
-  return 1;
+    return 1;
 }
 one();
 one.call();
 one.apply();
 
 const obj = {
-  two: function () {
-    return 2;
-  },
+    two: function () {
+        return 2;
+    },
 };
 obj.two();
 
@@ -1468,14 +2124,14 @@ four(4);
 
 Function
 
-- code ()
-- name (optional)
-- properties: .call(), .apply(), .bind()
-- pass function around like object
+-   code ()
+-   name (optional)
+-   properties: .call(), .apply(), .bind()
+-   pass function around like object
 
 ```javascript
 function woohooo() {
-  console.log("woohooo");
+    console.log("woohooo");
 }
 
 woohooo.yell = "ahhhhhhh";
@@ -1494,9 +2150,9 @@ woohooo.name;
 
 Functions are first class citizens in JavaScript
 
-- Function can be assigned to a variable
-- Function can be passed as a paramter to another function
-- Function can be returned as a value from other function
+-   Function can be assigned to a variable
+-   Function can be passed as a paramter to another function
+-   Function can be returned as a value from other function
 
 ```javascript
 // can be assigned to a variable
@@ -1504,19 +2160,19 @@ var stuff = function () {};
 
 // pass a function as paramter to another function
 function a(fn) {
-  fn();
+    fn();
 }
 a(function () {
-  console.log("hi there");
+    console.log("hi there");
 });
 
 // return function as a value from other function
 function b() {
-  return function c() {
-    {
-      console.log("bye");
-    }
-  };
+    return function c() {
+        {
+            console.log("bye");
+        }
+    };
 }
 b()();
 var d = b();
@@ -1527,25 +2183,25 @@ d();
 
 ### Extra Bits: Functions
 
-- make sure function is initialize one time only
-- use default parameters
+-   make sure function is initialize one time only
+-   use default parameters
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-  function a() {} // initialize 5 times
-  a();
+    function a() {} // initialize 5 times
+    a();
 }
 
 function a() {} // initialize once
 for (let i = 0; i < 5; i++) {
-  a();
+    a();
 }
 ```
 
 ```javascript
 // default parameters
 function b(param = 6) {
-  return param;
+    return param;
 }
 b();
 ```
@@ -1554,8 +2210,8 @@ b();
 
 ### Higher Order Functions
 
-- [Defining functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-- function() => function(a, b) => HOF
+-   [Defining functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+-   function() => function(a, b) => HOF
 
 |                    | function()          | function(a, b)      | HOF               |
 | ------------------ | ------------------- | ------------------- | ----------------- |
@@ -1565,19 +2221,19 @@ b();
 ```javascript
 // function()
 function letAdamLogin() {
-  let array = [];
-  for (let i = 0; i < 50000; i++) {
-    array.push(i);
-  }
-  return "Access Granted to Adam";
+    let array = [];
+    for (let i = 0; i < 50000; i++) {
+        array.push(i);
+    }
+    return "Access Granted to Adam";
 }
 
 function letEvaLogin() {
-  let array = [];
-  for (let i = 0; i < 50000; i++) {
-    array.push(i);
-  }
-  return "Access Granted to Eva";
+    let array = [];
+    for (let i = 0; i < 50000; i++) {
+        array.push(i);
+    }
+    return "Access Granted to Eva";
 }
 letAdamLogin();
 letEvaLogin();
@@ -1587,18 +2243,18 @@ letEvaLogin();
 // what data to use when function is called ?
 const giveAccessTo = (name) => "Access Granted to " + name;
 function letUserLogin(user) {
-  let array = [];
-  for (let i = 0; i < 50000; i++) {
-    array.push(i);
-  }
-  return giveAccessTo(user);
+    let array = [];
+    for (let i = 0; i < 50000; i++) {
+        array.push(i);
+    }
+    return giveAccessTo(user);
 }
 function letAdminLogin(admin) {
-  let array = [];
-  for (let i = 0; i < 1000000; i++) {
-    array.push(i);
-  }
-  return giveAccessTo(admin);
+    let array = [];
+    for (let i = 0; i < 1000000; i++) {
+        array.push(i);
+    }
+    return giveAccessTo(admin);
 }
 letUserLogin("Adam");
 letUserLogin("Eva");
@@ -1607,24 +2263,24 @@ letUserLogin("Eva");
 // what data to use during invocation ?
 // what to do during invocation ?
 function authenticate(person) {
-  let array = [];
-  console.log(`Level: ${person.level}`);
-  for (let i = 0; i < 50000; i++) {
-    array.push(i);
-  }
-  return giveAccessTo(person.name);
+    let array = [];
+    console.log(`Level: ${person.level}`);
+    for (let i = 0; i < 50000; i++) {
+        array.push(i);
+    }
+    return giveAccessTo(person.name);
 }
 
 function sing(person) {
-  return `lalalala ${person.name}`;
+    return `lalalala ${person.name}`;
 }
 
 function letPerson(person, fn) {
-  if (person.level === "admin") {
-    return fn(person);
-  } else if (person.level === "user") {
-    return fn(person);
-  }
+    if (person.level === "admin") {
+        return fn(person);
+    } else if (person.level === "user") {
+        return fn(person);
+    }
 }
 
 letPerson({ level: "user", name: "Tim" }, authenticate);
@@ -1634,9 +2290,9 @@ letPerson({ level: "admin", name: "Sally" }, sing);
 ```javascript
 // multiplyBy is HOF
 const multiplyBy = (num1) => {
-  return function (num2) {
-    return num1 * num2;
-  };
+    return function (num2) {
+        return num1 * num2;
+    };
 };
 const multiplyByTwo = multiplyBy(2);
 multiplyByTwo(4);
@@ -1652,18 +2308,18 @@ multiplyBy1(2)(4);
 
 A closure is a function that has access to its outer scope that it is defined
 
-- closure = function() + lexical scope (where we write the function)
+-   closure = function() + lexical scope (where we write the function)
 
 ```javascript
 function a() {
-  let grandpa = "grandpa";
-  return function b() {
-    let father = "father";
-    return function c() {
-      let son = "son";
-      return `${grandpa} > ${father} > ${son}`;
+    let grandpa = "grandpa";
+    return function b() {
+        let father = "father";
+        return function c() {
+            let son = "son";
+            return `${grandpa} > ${father} > ${son}`;
+        };
     };
-  };
 }
 
 a()()();
@@ -1672,15 +2328,15 @@ a()()();
 ```javascript
 //closures and higher order function
 function boo(string) {
-  return function (name) {
-    return function (name2) {
-      console.log(`${string} ${name} ${name2}`);
+    return function (name) {
+        return function (name2) {
+            console.log(`${string} ${name} ${name2}`);
+        };
     };
-  };
 }
 
 const boo2 = (string) => (name) => (name2) =>
-  console.log(`${string} ${name} ${name2}`);
+    console.log(`${string} ${name} ${name2}`);
 
 boo("hi")("john")("tanya");
 boo2("hi")("john")("tanya");
@@ -1692,10 +2348,10 @@ const booStringNameName2 = booStringName("tanya");
 
 ```javascript
 function callMeMaybe() {
-  setTimeout(function () {
-    console.log(callMe);
-  }, 4000);
-  const callMe = "Hi!";
+    setTimeout(function () {
+        console.log(callMe);
+    }, 4000);
+    const callMe = "Hi!";
 }
 
 callMeMaybe();
@@ -1708,9 +2364,9 @@ callMeMaybe();
 ```javascript
 // create bigArray everytime heavyDuty is executed
 function heavyDuty(item) {
-  const bigArray = new Array(7000).fill("😄");
-  console.log("created!");
-  return bigArray[item];
+    const bigArray = new Array(7000).fill("😄");
+    console.log("created!");
+    return bigArray[item];
 }
 
 heavyDuty(699);
@@ -1722,11 +2378,11 @@ heavyDuty(699);
 // Memory efficient
 // create bigArray once with closure
 function heavyDuty2() {
-  const bigArray = new Array(7000).fill("😄");
-  console.log("created Once!");
-  return function (item) {
-    return bigArray[item];
-  };
+    const bigArray = new Array(7000).fill("😄");
+    console.log("created Once!");
+    return function (item) {
+        return bigArray[item];
+    };
 }
 const getHeavyDuty = heavyDuty2();
 getHeavyDuty(699);
@@ -1741,18 +2397,18 @@ getHeavyDuty(699);
 ```javascript
 // closure hide passTime and launch functions
 const makeNuclearButton = () => {
-  let timeWithoutDestruction = 0;
-  const passTime = () => timeWithoutDestruction++;
-  const totalPeaceTime = () => timeWithoutDestruction;
-  const launch = () => {
-    timeWithoutDestruction = -1;
-    return "💥";
-  };
-  setInterval(passTime, 1000);
-  return {
-    totalPeaceTime,
-    launch,
-  };
+    let timeWithoutDestruction = 0;
+    const passTime = () => timeWithoutDestruction++;
+    const totalPeaceTime = () => timeWithoutDestruction;
+    const launch = () => {
+        timeWithoutDestruction = -1;
+        return "💥";
+    };
+    setInterval(passTime, 1000);
+    return {
+        totalPeaceTime,
+        launch,
+    };
 };
 
 const ww3 = makeNuclearButton();
@@ -1768,8 +2424,8 @@ ww3.launch();
 // Exercise
 let view;
 function initialize() {
-  view = "🏔";
-  console.log("view has been set!");
+    view = "🏔";
+    console.log("view has been set!");
 }
 
 initialize();
@@ -1782,17 +2438,17 @@ view;
 // Solution
 let view;
 function initialize() {
-  let called = 0;
-  const startOnce = () => {
-    if (called > 0) {
-      return;
-    } else {
-      view = "🏔";
-      called++;
-      console.log("view has been set!");
-    }
-  };
-  return { startOnce };
+    let called = 0;
+    const startOnce = () => {
+        if (called > 0) {
+            return;
+        } else {
+            view = "🏔";
+            called++;
+            console.log("view has been set!");
+        }
+    };
+    return { startOnce };
 }
 
 const app = initialize();
@@ -1806,9 +2462,9 @@ view;
 // Exercise
 const array = [1, 2, 3, 4];
 for (var i = 0; i < array.length; i++) {
-  setTimeout(function () {
-    console.log("I am at index " + i);
-  }, 3000);
+    setTimeout(function () {
+        console.log("I am at index " + i);
+    }, 3000);
 }
 ```
 
@@ -1816,9 +2472,9 @@ for (var i = 0; i < array.length; i++) {
 // Solution 1
 const array = [1, 2, 3, 4];
 for (let i = 0; i < array.length; i++) {
-  setTimeout(function () {
-    console.log("I am at index " + i);
-  }, 3000);
+    setTimeout(function () {
+        console.log("I am at index " + i);
+    }, 3000);
 }
 ```
 
@@ -1826,18 +2482,18 @@ for (let i = 0; i < array.length; i++) {
 // Solution 2
 const array = [1, 2, 3, 4];
 for (var i = 0; i < array.length; i++) {
-  (function (index) {
-    setTimeout(function () {
-      console.log("I am at index " + index);
-    }, 3000);
-  })(i);
+    (function (index) {
+        setTimeout(function () {
+            console.log("I am at index " + index);
+        }, 3000);
+    })(i);
 }
 ```
 
 ![](var-let-in-for-loop-1.png)
 ![](var-let-in-for-loop-2.png)
 
-- [Var And Let Inside a loop, inner function and setTimeoout](https://www.youtube.com/watch?v=LRWA9rdcK8o&ab_channel=bendtherules)
+-   [Var And Let Inside a loop, inner function and setTimeoout](https://www.youtube.com/watch?v=LRWA9rdcK8o&ab_channel=bendtherules)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -1863,23 +2519,23 @@ obj1.__proto__.__proto__; // null
 
 ```javascript
 let dragon = {
-  name: "Tanya",
-  fire: true,
-  fight() {
-    return 5;
-  },
-  sing() {
-    if (this.fire) {
-      return `I am ${this.name}, the breather of fire`;
-    }
-  },
+    name: "Tanya",
+    fire: true,
+    fight() {
+        return 5;
+    },
+    sing() {
+        if (this.fire) {
+            return `I am ${this.name}, the breather of fire`;
+        }
+    },
 };
 
 let lizard = {
-  name: "Kiki",
-  fight() {
-    return 1;
-  },
+    name: "Kiki",
+    fight() {
+        return 1;
+    },
 };
 
 // lizard inherit the properties of dragon
@@ -1894,9 +2550,9 @@ dragon.isPrototypeOf(lizard);
 
 // list all proprties of lizard
 for (let prop in lizard) {
-  if (lizard.hasOwnProperty(prop)) {
-    console.log(`lizard: ${prop}`);
-  } else console.log(`dragon: ${prop}`);
+    if (lizard.hasOwnProperty(prop)) {
+        console.log(`lizard: ${prop}`);
+    } else console.log(`dragon: ${prop}`);
 }
 ```
 
@@ -1941,7 +2597,7 @@ socrates.__proto__.hasOwnProperty("mortal");
 
 ```javascript
 function multiply5(num) {
-  return num * 5;
+    return num * 5;
 }
 multiply5.prototype;
 multiply5.__proto__; // Function
@@ -1958,7 +2614,7 @@ multiply5.__proto__.__proto__.__proto__; // null
 ```javascript
 // Date object => to have new method .lastYear() which shows you last year 'YYYY' format.
 Date.prototype.lastYear = function () {
-  return this.getFullYear() - 1;
+    return this.getFullYear() - 1;
 };
 new Date("1900-10-10").lastYear(); //'1899'
 ```
@@ -1966,11 +2622,11 @@ new Date("1900-10-10").lastYear(); //'1899'
 ```javascript
 // Mofify .map() to print '🗺' at the end of each item.
 Array.prototype.map = function () {
-  let arr = [];
-  for (let i = 0; i < this.length; i++) {
-    arr.push(`${this[i]}🗺`);
-  }
-  return arr;
+    let arr = [];
+    for (let i = 0; i < this.length; i++) {
+        arr.push(`${this[i]}🗺`);
+    }
+    return arr;
 };
 console.log([1, 2, 3].map()); //1🗺, 2🗺, 3🗺
 ```
@@ -1981,10 +2637,10 @@ console.log([1, 2, 3].map()); //1🗺, 2🗺, 3🗺
 
 ```javascript
 Function.prototype.bind = function (whoIsCallingMe) {
-  const self = this;
-  return function () {
-    return self.apply(whoIsCallingMe, arguments);
-  };
+    const self = this;
+    return function () {
+        return self.apply(whoIsCallingMe, arguments);
+    };
 };
 ```
 
@@ -1992,9 +2648,9 @@ Function.prototype.bind = function (whoIsCallingMe) {
 
 ### Section Review
 
-- [The Scheme Programming Language](https://www.scheme.com/tspl4/)
-- [Java](https://www.java.com/en/)
-- [Brendan Eich on Creating JavaScript in 10 Days, and What He’d Do Differently Today](https://thenewstack.io/brendan-eich-on-creating-javascript-in-10-days-and-what-hed-do-differently-today/)
+-   [The Scheme Programming Language](https://www.scheme.com/tspl4/)
+-   [Java](https://www.java.com/en/)
+-   [Brendan Eich on Creating JavaScript in 10 Days, and What He’d Do Differently Today](https://thenewstack.io/brendan-eich-on-creating-javascript-in-10-days-and-what-hed-do-differently-today/)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2004,17 +2660,17 @@ Function.prototype.bind = function (whoIsCallingMe) {
 
 Programming paradigms
 
-- Clear + Understandable
-- Easy to Extend
-- Easy to Maintain
-- Memory Efficient
-- DRY
+-   Clear + Understandable
+-   Easy to Extend
+-   Easy to Maintain
+-   Memory Efficient
+-   DRY
 
 [History of programming languages](https://en.wikipedia.org/wiki/History_of_programming_languages)
 
-- Procedure programming
-- object oriented programming
-- Functional programming
+-   Procedure programming
+-   object oriented programming
+-   Functional programming
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2040,13 +2696,13 @@ Object oriented programming is all about modeling real world objects and relatio
 ```javascript
 // each elf object has a copy of attack method
 function createElf(name, weapon) {
-  return {
-    name: name,
-    weapon: weapon,
-    attack() {
-      return `${name} attacks with ${weapon}`;
-    },
-  };
+    return {
+        name: name,
+        weapon: weapon,
+        attack() {
+            return `${name} attacks with ${weapon}`;
+        },
+    };
 }
 const sam = createElf("Sam", "stones");
 const peter = createElf("Peter", "fire");
@@ -2062,16 +2718,16 @@ peter.attack();
 ```javascript
 // all elf object access to shared copy of elfFunctions via __proto__ pointer
 const elfFunctions = {
-  attack: function () {
-    return `${this.name} attacks with ${this.weapon}`;
-  },
+    attack: function () {
+        return `${this.name} attacks with ${this.weapon}`;
+    },
 };
 function createElf(name, weapon) {
-  const newElf = Object.create(elfFunctions);
-  console.log(newElf.__proto__);
-  newElf.name = name;
-  newElf.weapon = weapon;
-  return newElf;
+    const newElf = Object.create(elfFunctions);
+    console.log(newElf.__proto__);
+    newElf.name = name;
+    newElf.weapon = weapon;
+    return newElf;
 }
 
 const sam = createElf("Sam", "stones");
@@ -2087,12 +2743,12 @@ peter.attack();
 
 ```javascript
 function Elf(name, weapon) {
-  this.name = name;
-  this.weapon = weapon;
+    this.name = name;
+    this.weapon = weapon;
 }
 
 Elf.prototype.attack = function () {
-  return `${this.name} attacks with ${this.weapon}`;
+    return `${this.name} attacks with ${this.weapon}`;
 };
 
 const sam = new Elf("Sam", "stones");
@@ -2108,15 +2764,15 @@ peter.attack();
 
 ```javascript
 class Elf {
-  // run constructor with new keyword
-  constructor(name, weapon) {
-    this.name = name;
-    this.weapon = weapon;
-  }
-  // shared attack method by all objects
-  attack() {
-    return `${this.name} attacks with ${this.weapon}`;
-  }
+    // run constructor with new keyword
+    constructor(name, weapon) {
+        this.name = name;
+        this.weapon = weapon;
+    }
+    // shared attack method by all objects
+    attack() {
+        return `${this.name} attacks with ${this.weapon}`;
+    }
 }
 
 const sam = new Elf("Sam", "stones");
@@ -2133,9 +2789,9 @@ peter.attack();
 ```javascript
 // new binding
 function Person(name, age) {
-  this.name = name;
-  this.age = age;
-  console.log(this);
+    this.name = name;
+    this.age = age;
+    console.log(this);
 }
 
 const person1 = new Person("Xavier", 55);
@@ -2144,11 +2800,11 @@ const person1 = new Person("Xavier", 55);
 ```javascript
 //implicit binding
 const person = {
-  name: "Karen",
-  age: 40,
-  hi() {
-    console.log("hi" + this.name);
-  },
+    name: "Karen",
+    age: 40,
+    hi() {
+        console.log("hi" + this.name);
+    },
 };
 
 person.hi();
@@ -2157,11 +2813,11 @@ person.hi();
 ```javascript
 //explicit binding
 const person3 = {
-  name: "Karen",
-  age: 40,
-  hi: function () {
-    console.log("hi" + this.setTimeout);
-  }.bind(window),
+    name: "Karen",
+    age: 40,
+    hi: function () {
+        console.log("hi" + this.setTimeout);
+    }.bind(window),
 };
 
 person3.hi();
@@ -2170,14 +2826,14 @@ person3.hi();
 ```javascript
 // arrow functions
 const person4 = {
-  name: "Karen",
-  age: 40,
-  hi: function () {
-    var inner = () => {
-      console.log("hi " + this.name);
-    };
-    return inner();
-  },
+    name: "Karen",
+    age: 40,
+    hi: function () {
+        var inner = () => {
+            console.log("hi " + this.name);
+        };
+        return inner();
+    },
 };
 
 person4.hi();
@@ -2189,33 +2845,33 @@ person4.hi();
 
 ```javascript
 class Character {
-  constructor(name, weapon) {
-    this.name = name;
-    this.weapon = weapon;
-  }
-  attack() {
-    return `${this.name} attacks with ${this.weapon}`;
-  }
+    constructor(name, weapon) {
+        this.name = name;
+        this.weapon = weapon;
+    }
+    attack() {
+        return `${this.name} attacks with ${this.weapon}`;
+    }
 }
 
 class Elf extends Character {
-  constructor(name, weapon, type) {
-    // console.log('what am i?', this); this gives an error
-    super(name, weapon);
-    console.log("what am i?", this);
-    this.type = type;
-  }
+    constructor(name, weapon, type) {
+        // console.log('what am i?', this); this gives an error
+        super(name, weapon);
+        console.log("what am i?", this);
+        this.type = type;
+    }
 }
 
 class Ogre extends Character {
-  constructor(name, weapon, color) {
-    super(name, weapon);
-    this.color = color;
-  }
-  makeFort() {
-    // this is like extending our prototype.
-    return "strongest fort in the world made";
-  }
+    constructor(name, weapon, color) {
+        super(name, weapon);
+        this.color = color;
+    }
+    makeFort() {
+        // this is like extending our prototype.
+        return "strongest fort in the world made";
+    }
 }
 
 const houseElf = new Elf("Dolby", "cloth", "house");
@@ -2234,10 +2890,10 @@ shrek.makeFort();
 
 ### 4 Pillars of OOP
 
-- Encapsulation: wrap data and code into objects
-- Abstraction: hide the complexity in classes
-- Inheritance
-- Polymorphism: call the same methods on different objects with different responses
+-   Encapsulation: wrap data and code into objects
+-   Abstraction: hide the complexity in classes
+-   Inheritance
+-   Polymorphism: call the same methods on different objects with different responses
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2245,24 +2901,24 @@ shrek.makeFort();
 
 ```javascript
 class Character {
-  constructor(name, weapon) {
-    this.name = name;
-    this.weapon = weapon;
-  }
-  attack() {
-    return "atack with " + this.weapon;
-  }
+    constructor(name, weapon) {
+        this.name = name;
+        this.weapon = weapon;
+    }
+    attack() {
+        return "atack with " + this.weapon;
+    }
 }
 
 class Queen extends Character {
-  constructor(name, weapon, kind) {
-    super(name, weapon);
-    this.kind = kind;
-  }
-  attack() {
-    console.log(super.attack());
-    return `I am the ${this.name} of ${this.kind}, now bow down to me! `;
-  }
+    constructor(name, weapon, kind) {
+        super(name, weapon);
+        this.kind = kind;
+    }
+    attack() {
+        console.log(super.attack());
+        return `I am the ${this.name} of ${this.kind}, now bow down to me! `;
+    }
 }
 
 const victoria = new Queen("Victoria", "army", "hearts");
@@ -2275,10 +2931,10 @@ victoria.attack();
 
 ### Functional Programming Introduction
 
-- [Functional Programming - Lambda Calculus](https://www.tutorialspoint.com/functional_programming/functional_programming_lambda_calculus.htm)
-- Separate between data over a program and the behavior of a program
-- All objects created in functional programming are immutable
-- Pure functions
+-   [Functional Programming - Lambda Calculus](https://www.tutorialspoint.com/functional_programming/functional_programming_lambda_calculus.htm)
+-   Separate between data over a program and the behavior of a program
+-   All objects created in functional programming are immutable
+-   Pure functions
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2286,10 +2942,10 @@ victoria.attack();
 
 ```javascript
 const user = {
-  name: "Kim",
-  active: true,
-  cart: [],
-  purchases: [],
+    name: "Kim",
+    active: true,
+    cart: [],
+    purchases: [],
 };
 
 //Implement a cart feature:
@@ -2307,11 +2963,11 @@ const user = {
 
 ### Pure Functions
 
-- no side effect
-- no mutation
-- same input -> same output
-- map and concat methods can fix this issue of mutation
-- [Referential Transparency](https://www.sitepoint.com/what-is-referential-transparency)
+-   no side effect
+-   no mutation
+-   same input -> same output
+-   map and concat methods can fix this issue of mutation
+-   [Referential Transparency](https://www.sitepoint.com/what-is-referential-transparency)
 
 ```javascript
 // Side effects
@@ -2320,11 +2976,11 @@ const user = {
 const array = [1, 2, 3];
 
 function mutateArray(arr) {
-  arr.pop();
+    arr.pop();
 }
 
 function mutateArray2(arr) {
-  arr.forEach((item) => arr.push(1));
+    arr.forEach((item) => arr.push(1));
 }
 
 array;
@@ -2337,17 +2993,17 @@ array;
 // No side effects
 const array = [1, 2, 3];
 function mutateArray(arr) {
-  const newArray = [].concat(arr);
-  newArray.pop();
-  return newArray;
+    const newArray = [].concat(arr);
+    newArray.pop();
+    return newArray;
 }
 function mutateArray2(arr) {
-  const newArray = [].concat(arr);
-  newArray.forEach((item) => newArray.push(1));
-  return newArray;
+    const newArray = [].concat(arr);
+    newArray.forEach((item) => newArray.push(1));
+    return newArray;
 }
 function mutateArray3(arr) {
-  return arr.map((item) => item * 2);
+    return arr.map((item) => item * 2);
 }
 
 array;
@@ -2365,28 +3021,28 @@ Functional programming at the end of the day is just about making your code pred
 
 The Perfect Function
 
-- Do 1 task only
-- Return Statement
-- Pure
-- No shared state
-- Immutable state
-- Composable
-- Predictable
+-   Do 1 task only
+-   Return Statement
+-   Pure
+-   No shared state
+-   Immutable state
+-   Composable
+-   Predictable
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Idempotent
 
-- Idempotence is a property of some operations such that no matter how many times you execute them, you achieve the same result
+-   Idempotence is a property of some operations such that no matter how many times you execute them, you achieve the same result
 
 ```javascript
 function notGood(num) {
-  return Math.random(num);
+    return Math.random(num);
 }
 
 // Idempotence
 function good() {
-  return 5;
+    return 5;
 }
 
 Math.abs(Math.abs(10));
@@ -2396,10 +3052,10 @@ Math.abs(Math.abs(10));
 
 ### Imperative vs Declarative
 
-- [Imperative versus declarative code… what’s the difference?](https://medium.com/front-end-weekly/imperative-versus-declarative-code-whats-the-difference-adc7dd6c8380)
-- [Imperative vs. Declarative Programming (in 60 seconds)](https://www.youtube.com/watch?v=JqvMTwnbhnA)
-- Imperative: How?
-- Declarative: What?
+-   [Imperative versus declarative code… what’s the difference?](https://medium.com/front-end-weekly/imperative-versus-declarative-code-whats-the-difference-adc7dd6c8380)
+-   [Imperative vs. Declarative Programming (in 60 seconds)](https://www.youtube.com/watch?v=JqvMTwnbhnA)
+-   Imperative: How?
+-   Declarative: What?
 
 ```javascript
 // Imperative
@@ -2424,13 +3080,13 @@ for (let i = 0; i < 3, i++) {
 ```javascript
 const obj = { name: "Andrei" };
 function clone(obj) {
-  return { ...obj }; // this is pure
+    return { ...obj }; // this is pure
 }
 
 function updateName(obj) {
-  const obj2 = clone(obj);
-  obj2.name = "Nana";
-  return obj2;
+    const obj2 = clone(obj);
+    obj2.name = "Nana";
+    return obj2;
 }
 
 const updatedObj = updateName(obj);
@@ -2444,15 +3100,15 @@ const updatedObj = updateName(obj);
 //HOF
 const hof = (fn) => fn(5);
 hof(function a(x) {
-  return x;
+    return x;
 });
 
 //Closure and HOF
 const closure = function () {
-  let count = 55;
-  return function getCounter() {
-    return count;
-  };
+    let count = 55;
+    return function getCounter() {
+        return count;
+    };
 };
 
 const getCounter = closure();
@@ -2492,8 +3148,8 @@ partialMultiplyBy5(4, 10);
 
 ### Compose and Pipe
 
-- [compose](https://ramdajs.com/docs/#compose)
-- [pipe](https://ramdajs.com/docs/#pipe)
+-   [compose](https://ramdajs.com/docs/#compose)
+-   [pipe](https://ramdajs.com/docs/#pipe)
 
 ```javascript
 // compose(fn1, fn2, fn3)(50)
@@ -2519,8 +3175,8 @@ multiplyBy3AndAbsolute2(-50);
 
 Arity of a function (or operation) describes the number of arguments that the function (or operation) takes
 
-- [Function arity](https://medium.com/@igorwojda/function-arity-4be140702f1d)
-- arity: 1 to 2 is preferred
+-   [Function arity](https://medium.com/@igorwojda/function-arity-4be140702f1d)
+-   arity: 1 to 2 is preferred
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2528,10 +3184,10 @@ Arity of a function (or operation) describes the number of arguments that the fu
 
 ```javascript
 const user = {
-  name: "Kim",
-  active: true,
-  cart: [],
-  purchases: [],
+    name: "Kim",
+    active: true,
+    cart: [],
+    purchases: [],
 };
 const history1 = [];
 const compose = (f, g) => (...args) => f(g(...args));
@@ -2571,38 +3227,38 @@ const purchaseItem = (...fns) => fns.reduce(compose);
 const purchaseItem2 = (...fns) => fns.reduce(pipe);
 
 function addItemToCart(user, item) {
-  history1.push(user);
-  const updatedCart = user.cart.concat(item);
-  return Object.assign({}, user, { cart: updatedCart });
+    history1.push(user);
+    const updatedCart = user.cart.concat(item);
+    return Object.assign({}, user, { cart: updatedCart });
 }
 
 function applyTaxToItems(user) {
-  history1.push(user);
-  const { cart } = user;
-  const taxRate = 1.3;
-  const updatedCart = cart.map((item) => ({
-    name: item.name,
-    price: item.price * taxRate,
-  }));
-  return Object.assign({}, user, { cart: updatedCart });
+    history1.push(user);
+    const { cart } = user;
+    const taxRate = 1.3;
+    const updatedCart = cart.map((item) => ({
+        name: item.name,
+        price: item.price * taxRate,
+    }));
+    return Object.assign({}, user, { cart: updatedCart });
 }
 
 function buyItem(user) {
-  history1.push(user);
-  const itemsInCart = user.cart;
-  return Object.assign({}, user, { purchases: itemsInCart });
+    history1.push(user);
+    const itemsInCart = user.cart;
+    return Object.assign({}, user, { purchases: itemsInCart });
 }
 
 function emptyUserCart(user) {
-  history1.push(user);
-  return Object.assign({}, user, { cart: [] });
+    history1.push(user);
+    return Object.assign({}, user, { cart: [] });
 }
 history1;
 purchaseItem2(
-  addItemToCart,
-  applyTaxToItems,
-  buyItem,
-  emptyUserCart
+    addItemToCart,
+    applyTaxToItems,
+    buyItem,
+    emptyUserCart
 )(user, { name: "laptop", price: 60 });
 history1;
 
@@ -2621,8 +3277,8 @@ function goForward() {}
 
 ### Composition vs Inheritance
 
-- Inheritance: a superclass that is extended to smaller pieces that add or overwrite things
-- Composition: smaller pieces that are combined to create something bigger
+-   Inheritance: a superclass that is extended to smaller pieces that add or overwrite things
+-   Composition: smaller pieces that are combined to create something bigger
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2641,17 +3297,17 @@ function goForward() {}
 
 ### Job Queue
 
-- Job Queue has high priority than Callback Queue
-- [Understanding Event Loop, Call Stack, Event & Job Queue in Javascript](https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd)
-- [Asynchronous JavaScript & EVENT LOOP](https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini)
+-   Job Queue has high priority than Callback Queue
+-   [Understanding Event Loop, Call Stack, Event & Job Queue in Javascript](https://medium.com/@Rahulx1/understanding-event-loop-call-stack-event-job-queue-in-javascript-63dcd2c71ecd)
+-   [Asynchronous JavaScript & EVENT LOOP](https://www.youtube.com/watch?v=8zKuNo4ay8E&ab_channel=AkshaySaini)
 
 ```javascript
 // Callback Queue - Task Queue
 setTimeout(() => {
-  console.log("1", "is the loneliest number");
+    console.log("1", "is the loneliest number");
 }, 0);
 setTimeout(() => {
-  console.log("2", "can be as bad as one");
+    console.log("2", "can be as bad as one");
 }, 10);
 
 // Job Queue - Microtask Queue
@@ -2668,29 +3324,29 @@ console.log("3", "is a crowd");
 
 ```javascript
 const promisify = (item, delay) =>
-  new Promise((resolve) => setTimeout(() => resolve(item), delay));
+    new Promise((resolve) => setTimeout(() => resolve(item), delay));
 
 const a = () => promisify("a", 100);
 const b = () => promisify("b", 5000);
 const c = () => promisify("c", 3000);
 
 async function parallel() {
-  const promises = [a(), b(), c()];
-  const [output1, output2, output3] = await Promise.all(promises);
-  return `prallel is done: ${output1} ${output2} ${output3}`;
+    const promises = [a(), b(), c()];
+    const [output1, output2, output3] = await Promise.all(promises);
+    return `prallel is done: ${output1} ${output2} ${output3}`;
 }
 
 async function race() {
-  const promises = [a(), b(), c()];
-  const output1 = await Promise.race(promises);
-  return `race is done: ${output1}`;
+    const promises = [a(), b(), c()];
+    const output1 = await Promise.race(promises);
+    return `race is done: ${output1}`;
 }
 
 async function sequence() {
-  const output1 = await a();
-  const output2 = await b();
-  const output3 = await c();
-  return `sequence is done ${output1} ${output2} ${output3}`;
+    const output1 = await a();
+    const output2 = await b();
+    const output3 = await c();
+    return `sequence is done ${output1} ${output2} ${output3}`;
 }
 
 sequence().then(console.log);
@@ -2702,10 +3358,10 @@ race().then(console.log);
 
 ### Threads, Concurrency and Parallelism
 
-- [Concurrency vs Parallelism](https://www.codeproject.com/Articles/1267757/Concurrency-vs-Parallelism)
-- [A gentle introduction to multithreading](https://www.internalpointers.com/post/gentle-introduction-multithreading)
-- [Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-- [Scaling Node.js Applications](https://www.freecodecamp.org/news/scaling-node-js-applications-8492bd8afadc/)
+-   [Concurrency vs Parallelism](https://www.codeproject.com/Articles/1267757/Concurrency-vs-Parallelism)
+-   [A gentle introduction to multithreading](https://www.internalpointers.com/post/gentle-introduction-multithreading)
+-   [Using Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
+-   [Scaling Node.js Applications](https://www.freecodecamp.org/news/scaling-node-js-applications-8492bd8afadc/)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2721,24 +3377,24 @@ race().then(console.log);
 
 [JavaScript Module Pattern Basics](https://coryrylan.com/blog/javascript-module-pattern-basics)
 
-- global scope
-- module scope
-- function scope
-- block scope - let and const
+-   global scope
+-   module scope
+-   function scope
+-   block scope - let and const
 
 ```javascript
 // IIFE
 // Module Pattern
 var fightModule = (function () {
-  var harry = "potter";
-  var voldemort = "He who must not be named";
+    var harry = "potter";
+    var voldemort = "He who must not be named";
 
-  function fight(char1, char2) {
-    var attack1 = Math.floor(Math.random() * char1.length);
-    var attack2 = Math.floor(Math.random() * char2.length);
-    return attack1 > attack2 ? `${char1} wins` : `${char2} wins`;
-  }
-  return { fight };
+    function fight(char1, char2) {
+        var attack1 = Math.floor(Math.random() * char1.length);
+        var attack2 = Math.floor(Math.random() * char2.length);
+        return attack1 > attack2 ? `${char1} wins` : `${char2} wins`;
+    }
+    return { fight };
 })();
 
 fightModule.fight("harry", "voldemort");
@@ -2754,16 +3410,16 @@ fightModule.fight("harry", "voldemort");
 
 ### CommonJS, AMD, UMD
 
-- [What are CJS, AMD, UMD, and ESM in Javascript?](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
-- [Browserify](http://browserify.org/)
+-   [What are CJS, AMD, UMD, and ESM in Javascript?](https://dev.to/iggredible/what-the-heck-are-cjs-amd-umd-and-esm-ikm)
+-   [Browserify](http://browserify.org/)
 
 **[⬆ back to top](#table-of-contents)**
 
 ### ES6 Modules
 
-- [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
-- [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-- [JavaScript ES6 Modules more in depth](https://youtu.be/cRHQNNcYf6s)
+-   [export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+-   [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+-   [JavaScript ES6 Modules more in depth](https://youtu.be/cRHQNNcYf6s)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2783,8 +3439,8 @@ throw Error;
 throw new Error(); // will create an instance of an Error in JavaScript and stop the execution of your script.
 
 function a() {
-  const b = new Error("what?");
-  return b;
+    const b = new Error("what?");
+    return b;
 }
 
 a().stack;
@@ -2800,16 +3456,16 @@ let error3 = new ReferenceError(message);
 
 ```javascript
 function fail() {
-  try {
-    console.log("this works");
-    throw new Error("oopsie");
-  } catch (e) {
-    console.log("error", e);
-  } finally {
-    console.log("still good");
-    return "returning from fail";
-  }
-  console.log("never going to get here"); // not reachable
+    try {
+        console.log("this works");
+        throw new Error("oopsie");
+    } catch (e) {
+        console.log("error", e);
+    } finally {
+        console.log("still good");
+        return "returning from fail";
+    }
+    console.log("never going to get here"); // not reachable
 }
 fail();
 ```
@@ -2819,11 +3475,11 @@ for example:
 
 ```javascript
 try {
-  setTimeout(function () {
-    fakevariable;
-  }, 1000);
+    setTimeout(function () {
+        fakevariable;
+    }, 1000);
 } catch (e) {
-  console.log("error", e);
+    console.log("error", e);
 } // This code will not throw error in try catch
 ```
 
@@ -2835,37 +3491,37 @@ To handle a asynchronous error we have .catch() method which we can use with pro
 
 ```javascript
 Promise.resolve("asyncfail")
-  .then((response) => {
-    console.log(response);
-    throw new Error("#1 fail");
-  })
-  .then((response) => {
-    console.log(response);
-  })
-  .catch((err) => {
-    console.error("error", err.message);
-  })
-  .then((response) => {
-    console.log("hi am I still needed?", response);
-    return "done";
-  })
-  .catch((err) => {
-    console.error(err);
-    return "failed";
-  });
+    .then((response) => {
+        console.log(response);
+        throw new Error("#1 fail");
+    })
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((err) => {
+        console.error("error", err.message);
+    })
+    .then((response) => {
+        console.log("hi am I still needed?", response);
+        return "done";
+    })
+    .catch((err) => {
+        console.error(err);
+        return "failed";
+    });
 ```
 
 but it gets very tricky to handle an error with .catch() method when it comes to nested promise. So, to solve this issue we will use async await with try catch block. As we know try catch block is only for synchronous code and we used the .catch for our asynchronous code using promises. async await although asynchronous makes our code look synchronous so we can actually use try catch blocks with them.
 
 ```javascript
 (async function () {
-  try {
-    await Promise.reject("oopsie");
-  } catch (err) {
-    console.error(err);
-  }
+    try {
+        await Promise.reject("oopsie");
+    } catch (err) {
+        console.error(err);
+    }
 
-  console.log("This is still good!");
+    console.log("This is still good!");
 })();
 ```
 
@@ -2875,16 +3531,16 @@ but it gets very tricky to handle an error with .catch() method when it comes to
 
 ```javascript
 (function () {
-  try {
-    throw new Error();
-  } catch (err) {
-    var err = 5;
-    var boo = 10;
+    try {
+        throw new Error();
+    } catch (err) {
+        var err = 5;
+        var boo = 10;
+        console.log(err);
+    }
+    //Guess what the output is here:
     console.log(err);
-  }
-  //Guess what the output is here:
-  console.log(err);
-  console.log(boo);
+    console.log(boo);
 })();
 ```
 
@@ -2892,16 +3548,16 @@ Solution:
 
 ```javascript
 (function () {
-  try {
-    throw new Error();
-  } catch (err) {
-    var err = 5;
-    var boo = 10;
-    console.log(err); // 5
-  }
-  //Guess what the output is here:
-  console.log(err); // undefined
-  console.log(boo); // 10
+    try {
+        throw new Error();
+    } catch (err) {
+        var err = 5;
+        var boo = 10;
+        console.log(err); // 5
+    }
+    //Guess what the output is here:
+    console.log(err); // undefined
+    console.log(boo); // 10
 })();
 ```
 
@@ -2913,14 +3569,14 @@ In simple words, the catch parameter is block-scoped—can not be accessed outsi
 
 ```javascript
 function foo() {
-  "use strict";
-  try {
-    throw "hello";
-  } catch (err) {
-    console.log(err); // hello
-  }
-  // `err` block scoped. Does not exist outside the catch block.
-  console.log(err); // throws `err` is not defined.
+    "use strict";
+    try {
+        throw "hello";
+    } catch (err) {
+        console.log(err); // hello
+    }
+    // `err` block scoped. Does not exist outside the catch block.
+    console.log(err); // throws `err` is not defined.
 }
 foo();
 ```
@@ -2929,14 +3585,14 @@ Since the catch parameter overrides variables with the same name in the current 
 
 ```javascript
 function foo() {
-  let err = 0;
-  try {
-    throw "hello";
-  } catch (err) {
-    console.log(err); // hello
-    err = 10;
-  }
-  console.log(err); // 0
+    let err = 0;
+    try {
+        throw "hello";
+    } catch (err) {
+        console.log(err); // hello
+        err = 10;
+    }
+    console.log(err); // 0
 }
 
 foo();
@@ -2946,13 +3602,13 @@ Of course, if we declare a block scope variable same as catch parameter inside t
 
 ```javascript
 function foo() {
-  try {
-    throw "hello";
-  } catch (err) {
+    try {
+        throw "hello";
+    } catch (err) {
+        console.log(err);
+        let err = 2; // will throw an error.
+    }
     console.log(err);
-    let err = 2; // will throw an error.
-  }
-  console.log(err);
 }
 foo();
 ```
@@ -2961,15 +3617,15 @@ Declarations with var are not block-scoped and hoisted to the top of the functio
 
 ```javascript
 function foo() {
-  "use strict";
-  err = 1;
-  try {
-    throw "hello";
-  } catch (err) {
-    console.log(err); // hello
-    var err = 2;
-  }
-  console.log(err); // 1
+    "use strict";
+    err = 1;
+    try {
+        throw "hello";
+    } catch (err) {
+        console.log(err); // hello
+        var err = 2;
+    }
+    console.log(err); // 1
 }
 foo();
 ```
@@ -2982,26 +3638,26 @@ foo();
 
 ```javascript
 class authenticationError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "ValidationError";
-    this.message = message;
-  }
+    constructor(message) {
+        super(message);
+        this.name = "ValidationError";
+        this.message = message;
+    }
 }
 class PermissionError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "PermissionError";
-    this.message = message;
-    this.favouriteSnack = "grapes";
-  }
+    constructor(message) {
+        super(message);
+        this.name = "PermissionError";
+        this.message = message;
+        this.favouriteSnack = "grapes";
+    }
 }
 class DatabaseError extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "DatabaseError";
-    this.message = message;
-  }
+    constructor(message) {
+        super(message);
+        this.name = "DatabaseError";
+        this.message = message;
+    }
 }
 
 throw new PermissionError("A permission error");
