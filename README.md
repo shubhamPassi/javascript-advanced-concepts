@@ -225,9 +225,9 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
-## **Variables**
+# **Variables**
 
-### Use meaningful and pronounceable variable names
+# Use meaningful and pronounceable variable names
 
 **Bad:**
 
