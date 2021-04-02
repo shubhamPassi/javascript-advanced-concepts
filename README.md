@@ -195,7 +195,7 @@
         - [Extending Errors](#extending-errors)
         </details>
 
-### Section 0: Clean Code Javascript
+## **Section 0: Clean Code Javascript**
 
 ## Introduction
 
