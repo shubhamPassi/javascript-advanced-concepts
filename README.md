@@ -3417,7 +3417,7 @@ ES2018 includes the following new feature proposals:
 
 ## <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-#### Async iterators
+# `Async iterators`
 
 > Async iterators are like iterators, but this time, next() returns a promise. This promise resolves with the tuple { value, done }. A promise needs to be returned because, at the time, the iterator returns the values of value and done are unknown.
 
@@ -3449,7 +3449,7 @@ var iterator = asyncIterator();
 })();
 ```
 
-#### Object rest properties
+# `Object rest properties`
 
 > Rest properties for object destructuring assignment.
 
@@ -3465,7 +3465,7 @@ lname; //"HM"
 rest; // {location: "Earth", type: "Human"}
 ```
 
-#### Object spread properties
+# `Object spread properties`
 
 > Spread properties for object destructuring assignment.
 
@@ -3475,7 +3475,7 @@ let info = { fname, lname, ...rest };
 info; // { fname: "Hemanth", lname: "HM", location: "Earth", type: "Human" }
 ```
 
-#### Promise prototype finally
+# `Promise prototype finally`
 
 > Promise API is extended by an optional _finally_ block which is called in any case (after the Promise is resolved or is rejected).
 
