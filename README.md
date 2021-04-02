@@ -10,11 +10,11 @@
         <details>
           <summary>Click to expand!</summary>
 
-        -   [ES2015 (ES6) feature list and examples](#es2015-ES6-feature-list-and-examples)
-        -   [ES2016 feature list and examples](#es2016-feature-list-and-examples)
-        -   [ES2017 feature list and examples](#es2017-feature-list-and-examples)
-        -   [ES2018 feature list and examples](#es2017-feature-list-and-examples)
-        -   [ES2019 feature list and examples](#es2017-feature-list-and-examples)
+        -   [ES2015 ES6 feature list and examples](#es2015-es6-feature-list-and-examples)
+        -   [ES2016 ES7 feature list and examples](#es2016-es7-feature-list-and-examples)
+        -   [ES2017 ES8 feature list and examples](#es2017-es8-feature-list-and-examples)
+        -   [ES2018 ES9 feature list and examples](#es2017-es9-feature-list-and-examples)
+        -   [ES2019 ES10 feature list and examples](#es2017-es10-feature-list-and-examples)
         </details>
 
     -   [**Section 2: JavaScript Foundation**](#section-2-javascript-foundation)
@@ -179,7 +179,7 @@
 
 ## **Section 1: Lists and examples for new Javascript features**
 
-### ES2015 (ES6) feature list and examples
+## ES2015 ES6 feature list and examples
 
 <details>
   <summary>Click to expand!</summary>
@@ -774,6 +774,82 @@ function factorial(n, acc = 1) {
 // Stack overflow in most implementations today,
 // but safe on arbitrary inputs in ES6
 factorial(100000)
+```
+
+</details>
+
+**[⬆ back to top](#table-of-contents)**
+
+## ES2016 ES7 feature list and examples
+
+<details>
+  <summary>Click to expand!</summary>
+  
+See the [ES2016 standard](http://www.ecma-international.org/ecma-262/7.0/) for full specification of the ECMAScript 2016 language.
+
+ES2016 includes the following new features:
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+-   [Array.prototype.includes](#arrayprototypeincludes)
+-   [Exponentiation Operator](#exponentiation)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+---
+
+### `Array.prototype.includes`
+
+This one is a bit like `indexOf` and very useful to the language by relying on returning true or false, not `0`.
+
+#### Syntax:
+
+-   `arr.includes(searchEl[, fromIndex])`
+-   **@searchElement**: the element to search for
+-   **@fromIndex**: pos in array at which to begin searching
+-   **returns**: Boolean
+
+#### Examples:
+
+> basic examples
+
+```javascript
+[1, 2, 3]
+    .includes(-1) // false
+    [(1, 2, 3)].includes(1) // true
+    [(1, 2, 3)].includes(3, 4) // false
+    [(1, 2, 3)].includes(3, 3) // false
+    [(1, 2, NaN)].includes(NaN) // true
+    [("foo", "bar", "quux")].includes("foo") // true
+    [("foo", "bar", "quux")].includes("norf"); // false
+```
+
+> if `fromIndex` is greater than or equal to the len of array, false is automatically returned
+
+```javascript
+let arr = ["x", "y", "z"];
+
+arr.includes("x", 3); // false
+arr.includes("z", 100); // false
+```
+
+### `Exponentiation`
+
+A shorthand method to exponetiation has been introduced in JavaScript:
+
+#### Syntax:
+
+-   `operand` \*\* `operand`
+
+> basic examples
+
+```javascript
+Math.pow(5, 2);
+
+// ...is now
+5 ** 2;
+// 5 ** 2 === 5 * 5
 ```
 
 </details>
