@@ -21,7 +21,6 @@
         -   [Error Handling](#error-handling)
         -   [Formatting](#formatting)
         -   [Comments](#comments)
-        -   [Translation](#translation)
         </details>
 
     -   [**Section 1: Lists and examples for new Javascript features**](#section-1-lists-and-examples-for-new-Javascript-features)
@@ -197,7 +196,7 @@
 
 ## **Section 0: Clean Code Javascript**
 
-### **Introduction**
+### `Introduction`
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
@@ -225,9 +224,9 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
-### Variables
+### `Variables`
 
-#### Use meaningful and pronounceable variable names
+### Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -243,7 +242,7 @@ const currentDate = moment().format("YYYY/MM/DD");
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Use the same vocabulary for the same type of variable
+### Use the same vocabulary for the same type of variable
 
 **Bad:**
 
@@ -261,7 +260,7 @@ getUser();
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Use searchable names
+### Use searchable names
 
 We will read more code than we will ever write. It's important that the code we
 do write is readable and searchable. By _not_ naming variables that end up
@@ -289,7 +288,7 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Use explanatory variables
+### Use explanatory variables
 
 **Bad:**
 
@@ -313,7 +312,7 @@ saveCityZipCode(city, zipCode);
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Avoid Mental Mapping
+### Avoid Mental Mapping
 
 Explicit is better than implicit.
 
@@ -348,7 +347,7 @@ locations.forEach((location) => {
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Don't add unneeded context
+### Don't add unneeded context
 
 If your class/object name tells you something, don't repeat that in your
 variable name.
@@ -383,7 +382,7 @@ function paintCar(car) {
 
 **[⬆ back to top](#table-of-contents)**
 
-#### Use default arguments instead of short circuiting or conditionals
+### Use default arguments instead of short circuiting or conditionals
 
 Default arguments are often cleaner than short circuiting. Be aware that if you
 use them, your function will only provide default values for `undefined`
@@ -409,7 +408,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Functions**
+### `Functions`
 
 ### Function arguments (2 or fewer ideally)
 
@@ -1210,7 +1209,7 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Objects and Data Structures**
+### `Objects and Data Structures`
 
 ### Use getters and setters
 
@@ -1313,7 +1312,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Classes**
+### `Classes`
 
 ### Prefer ES2015/ES6 classes over ES5 plain functions
 
@@ -1550,7 +1549,7 @@ class Employee {
 
 **[⬆ back to top](#table-of-contents)**
 
-### **SOLID**
+### `SOLID`
 
 ### Single Responsibility Principle (SRP)
 
@@ -2003,7 +2002,7 @@ inventoryTracker.requestItems();
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Testing**
+### `Testing`
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -2074,7 +2073,7 @@ describe("MakeMomentJSGreatAgain", () => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Concurrency**
+### `Concurrency`
 
 ### Use Promises, not callbacks
 
@@ -2172,7 +2171,7 @@ async function getCleanCodeArticle() {
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Error Handling**
+### `Error Handling`
 
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
@@ -2251,7 +2250,7 @@ getdata()
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Formatting**
+### `Formatting`
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
@@ -2390,7 +2389,7 @@ review.perfReview();
 
 **[⬆ back to top](#table-of-contents)**
 
-### **Comments**
+### `Comments`
 
 ### Only comment things that have business logic complexity.
 
