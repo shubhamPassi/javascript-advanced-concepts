@@ -6,7 +6,8 @@
 
     -   [**Table of Contents**](#table-of-contents)
 
-    -   [**Section 0: Clean Code Javascript**](#clean-code-javascript)(#clean-code-javascript)
+    -   [**Section 0: Clean Code Javascript**](#clean-code-javascript)
+
         <details>
         <summary>Click to expand!</summary>
 
