@@ -778,8 +778,6 @@ factorial(100000)
 
 </details>
 
-**[⬆ back to top](#table-of-contents)**
-
 ### ES2016 ES7 feature list and examples
 
 <details>
@@ -1048,8 +1046,6 @@ const func = (a, b, c) => {
 ```
 
 </details>
-
-**[⬆ back to top](#table-of-contents)**
 
 ### ES2018 ES9 feature list and examples
 
