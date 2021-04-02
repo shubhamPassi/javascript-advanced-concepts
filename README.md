@@ -197,7 +197,7 @@
 
 ## **Section 0: Clean Code Javascript**
 
-## Introduction
+### **Introduction**
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
@@ -227,7 +227,7 @@ improvement. Beat up the code instead!
 
 ### **Variables**
 
-### Use meaningful and pronounceable variable names
+#### Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -243,7 +243,7 @@ const currentDate = moment().format("YYYY/MM/DD");
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use the same vocabulary for the same type of variable
+#### Use the same vocabulary for the same type of variable
 
 **Bad:**
 
@@ -261,7 +261,7 @@ getUser();
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use searchable names
+#### Use searchable names
 
 We will read more code than we will ever write. It's important that the code we
 do write is readable and searchable. By _not_ naming variables that end up
@@ -289,7 +289,7 @@ setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use explanatory variables
+#### Use explanatory variables
 
 **Bad:**
 
@@ -313,7 +313,7 @@ saveCityZipCode(city, zipCode);
 
 **[⬆ back to top](#table-of-contents)**
 
-### Avoid Mental Mapping
+#### Avoid Mental Mapping
 
 Explicit is better than implicit.
 
@@ -348,7 +348,7 @@ locations.forEach((location) => {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Don't add unneeded context
+#### Don't add unneeded context
 
 If your class/object name tells you something, don't repeat that in your
 variable name.
@@ -383,7 +383,7 @@ function paintCar(car) {
 
 **[⬆ back to top](#table-of-contents)**
 
-### Use default arguments instead of short circuiting or conditionals
+#### Use default arguments instead of short circuiting or conditionals
 
 Default arguments are often cleaner than short circuiting. Be aware that if you
 use them, your function will only provide default values for `undefined`
