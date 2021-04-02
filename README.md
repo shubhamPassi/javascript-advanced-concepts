@@ -10,7 +10,7 @@
         <details>
           <summary>Click to expand!</summary>
 
-        -   [ES2015 (ES6) feature list and examples](<#es2015-(ES6)-feature-list-and-examples>>)
+        -   [ES2015 (ES6) feature list and examples](#es2015-ES6-feature-list-and-examples)
         -   [ES2016 feature list and examples](#es2016-feature-list-and-examples)
         -   [ES2017 feature list and examples](#es2017-feature-list-and-examples)
         -   [ES2018 feature list and examples](#es2017-feature-list-and-examples)
@@ -776,7 +776,7 @@ function factorial(n, acc = 1) {
 factorial(100000)
 ```
 
-</dtails>
+</details>
 
 **[⬆ back to top](#table-of-contents)**
 
