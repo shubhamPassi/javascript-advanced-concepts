@@ -197,7 +197,7 @@
 
 ## **Section 0: Clean Code Javascript**
 
-# Introduction
+### Introduction
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
@@ -225,9 +225,9 @@ shaped into its final form. Finally, we chisel away the imperfections when
 we review it with our peers. Don't beat yourself up for first drafts that need
 improvement. Beat up the code instead!
 
-# **Variables**
+### **Variables**
 
-# Use meaningful and pronounceable variable names
+### Use meaningful and pronounceable variable names
 
 **Bad:**
 
@@ -409,7 +409,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Functions**
+### **Functions**
 
 ### Function arguments (2 or fewer ideally)
 
@@ -1210,7 +1210,7 @@ inventoryTracker("apples", req, "www.inventory-awesome.io");
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Objects and Data Structures**
+### **Objects and Data Structures**
 
 ### Use getters and setters
 
@@ -1313,7 +1313,7 @@ console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Classes**
+### **Classes**
 
 ### Prefer ES2015/ES6 classes over ES5 plain functions
 
@@ -1550,7 +1550,7 @@ class Employee {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **SOLID**
+### **SOLID**
 
 ### Single Responsibility Principle (SRP)
 
@@ -2003,7 +2003,7 @@ inventoryTracker.requestItems();
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Testing**
+### **Testing**
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -2074,7 +2074,7 @@ describe("MakeMomentJSGreatAgain", () => {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Concurrency**
+### **Concurrency**
 
 ### Use Promises, not callbacks
 
@@ -2172,7 +2172,7 @@ async function getCleanCodeArticle() {
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Error Handling**
+### **Error Handling**
 
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
@@ -2251,7 +2251,7 @@ getdata()
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Formatting**
+### **Formatting**
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
@@ -2390,7 +2390,7 @@ review.perfReview();
 
 **[⬆ back to top](#table-of-contents)**
 
-## **Comments**
+### **Comments**
 
 ### Only comment things that have business logic complexity.
 
@@ -2530,7 +2530,7 @@ const actions = function () {
 
 ## **Section 1: Lists and examples for new Javascript features**
 
-### ES2015 ES6 feature list and examples
+### **ES2015 ES6 feature list and examples**
 
 <details>
   <summary>Click to expand!</summary>
@@ -3417,7 +3417,7 @@ ES2018 includes the following new feature proposals:
 
 ## <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Async iterators
+#### Async iterators
 
 > Async iterators are like iterators, but this time, next() returns a promise. This promise resolves with the tuple { value, done }. A promise needs to be returned because, at the time, the iterator returns the values of value and done are unknown.
 
@@ -3449,7 +3449,7 @@ var iterator = asyncIterator();
 })();
 ```
 
-# Object rest properties
+#### Object rest properties
 
 > Rest properties for object destructuring assignment.
 
@@ -3465,7 +3465,7 @@ lname; //"HM"
 rest; // {location: "Earth", type: "Human"}
 ```
 
-# Object spread properties
+#### Object spread properties
 
 > Spread properties for object destructuring assignment.
 
@@ -3475,7 +3475,7 @@ let info = { fname, lname, ...rest };
 info; // { fname: "Hemanth", lname: "HM", location: "Earth", type: "Human" }
 ```
 
-# Promise prototype finally
+#### Promise prototype finally
 
 > Promise API is extended by an optional _finally_ block which is called in any case (after the Promise is resolved or is rejected).
 
