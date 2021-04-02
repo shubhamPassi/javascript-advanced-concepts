@@ -1262,7 +1262,7 @@ try {
 }
 ```
 
-<details>
+</details>
 
 **[⬆ back to top](#table-of-contents)**
 
