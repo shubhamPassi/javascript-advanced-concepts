@@ -197,7 +197,7 @@
 
 ## **Section 0: Clean Code Javascript**
 
-## Introduction
+# Introduction
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
