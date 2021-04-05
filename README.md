@@ -6048,10 +6048,10 @@ function emptyUserCart(user) {
 }
 history1;
 purchaseItem2(
-    addItemToCart,
-    applyTaxToItems,
+    emptyUserCart,
     buyItem,
-    emptyUserCart
+    applyTaxToItems,
+    addItemToCart
 )(user, { name: "laptop", price: 60 });
 history1;
 
