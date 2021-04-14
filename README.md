@@ -4517,6 +4517,7 @@ console.log(result.name); //3
 By calling Foo() with new in front of it, we’ve constructed a new object and set that new object as the this for the call of foo().
 
 **Priority**
+
 The highest priority has new Binding. Then explicit binding and implicit binding. The lowest priority has default binding.
 
 **Arrow Function**
