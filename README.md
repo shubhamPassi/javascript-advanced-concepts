@@ -4360,7 +4360,230 @@ script1.a()
 
 ### this Keyword
 
-this is the object that the function is a property of
+"this is the object that the function is a property of" which means The **this** keyword behaves differently in JavaScript compared to other languages. In JavaScript the value of this not refer to the function in which it is used or it’s scope but is determined mostly by the invocation context of function **_(context.function())_** and where it is called.
+
+```javascript
+function foo() {
+    var a = 2;
+    this.bar();
+}
+
+function bar() {
+    console.log(this.a);
+}
+
+foo(); //undefined
+```
+
+As you see in above example this in foo function not refer to the lexical scope of the function. But refer to global scope because it’s the invocation context of the function **_(window.foo())_**.
+
+![](this-rules.png)
+
+**\*1. Default Binding:**
+It’s the most common case of function calls the standalone function invocation like below example.
+
+```javascript
+var myFunction = function () {
+    console.log(this);
+};
+
+myFunction(); // Window
+```
+
+As you see above because we call myfunction() from the Window context so this will refer to Window object .
+
+```javascript
+var myFunction = function () {
+    console.log(this.a);
+};
+
+var a = 5;
+myFunction(); //5
+```
+
+We defined the variable a in the window context so the output of the myFunction() call will be 5 because this will refer to window context which it’s the default context.
+
+**2. Implicit Binding:**
+In this case, The object that is standing before the dot is what this keyword will be bound to.
+
+```javascript
+function foo() {
+    console.log(this.a);
+}
+
+var obj = {
+    a: 2,
+    foo: foo,
+};
+
+obj.foo(); // 2
+```
+
+As you see above this will refer to the object obj so the value of this.a will equal 2.
+Noted: if you assign the obj.foo to a variable then this variable will reference to the function itself
+
+```javascript
+var john = {
+    name: "John",
+    greet: function (person) {
+        console.log("Hi " + person + ", my name is " + this.name);
+    },
+};
+
+john.greet("Mark"); // Hi Mark, my name is John
+
+var fx = john.greet;
+fx("Mark"); // Hi Mark, my name is
+```
+
+As we see when you call john.greet(“Mark”) this will refer to the john object so this.name will be John
+But after that when assignment var fx = john.greet;
+So fx will be a reference to the greet function itself so the default binding applies and this will refer to Window.
+
+**3- Explicit Binding:**
+In this case, you can force a function call to use a particular object for this binding, without putting a property function reference on the object. so we explicitly say to a function what object it should use for this — using functions such as call, apply and bind
+
+```javascript
+function greet() {
+	console.log(this.name);
+}
+
+var person = {
+	name:'Alex'
+}
+
+greet.call(person, arg1, arg2, arg3, ...); // Alex
+```
+
+The apply function is similar to call with the difference that the function arguments are passed as an array.
+
+```javascript
+function greet() {
+    console.log(this.name);
+}
+
+var person = {
+    name: "Alex",
+};
+
+greet.apply(person, [args]); // Alex
+```
+
+The bind function creates a new function that will act as the original function but with this predefined.
+
+```javascript
+function greet() {
+    console.log(this.name);
+}
+
+var person = {
+    name: "Alex",
+};
+
+var greetPerson = greet.bind(person);
+greetPerson(); // Alex
+```
+
+Now greetPerson function is a copy of greet but this will refer to the person object.
+So You can use bind to returns a function that you can later execute, but Call/apply use it when you need to call the function immediately.
+
+**4. New Binding**
+The last rule exists for this binding.The function that is called with new operator when the code new Foo(…) is executed, the following things happen:
+1- An empty object is created and referenced by this variable, inheriting the prototype of the function.
+2- Properties and methods are added to the object referenced by this.
+3- The newly created object referenced by this is returned at the end implicitly (if no other object was returned explicitly).
+
+```javascript
+function Foo() {
+    /*
+	       1- create a new object using the object literal 
+		   var this = {};
+       */
+
+    // 2- add properties and methods
+    this.name = "Osama";
+    this.say = function () {
+        return "I am " + this.name;
+    };
+
+    // 3- return this;
+}
+
+var name = "Ahmed";
+var result = new Foo();
+console.log(result.name); //3
+```
+
+By calling Foo() with new in front of it, we’ve constructed a new object and set that new object as the this for the call of foo().
+
+**Priority**
+The highest priority has new Binding. Then explicit binding and implicit binding. The lowest priority has default binding.
+
+**Arrow Function**
+
+Normal functions abide by the 4 rules we just covered. But ES6 introduces a special kind of function that does not use these rules:
+
+Arrow-functions have two main benefits.
+
+1. They have Shorter Syntax.
+
+```javascript
+var funcName = (params) => {
+    return params + 2;
+};
+console.log(funcName(2)); //4
+```
+
+2.  You don’t rebind the value of this when you use an arrow function inside of another function:
+
+```javascript
+const outerThis = this;
+
+const func = () => {
+    console.log(this === outerThis);
+};
+
+new func();
+func.call(null); //true
+func.apply(undefined); //true
+func.bind({})(); //true
+```
+
+this will always refer to the lexical scope and not impact by any rule from the 4 rules such as I explicit binding in above example also if you try to use new before arrow function will give an error.because arrow functions can’t run with new.
+
+![](arrow-function-this.png)
+
+So this in arrow function will always take his value from the outside (Lexical scope).
+
+```javascript
+var group = {
+    title: "Our Group",
+    students: ["John", "Pete", "Alice"],
+
+    showList() {
+        this.students.forEach((student) => {
+            // this here refer to group object
+            console.log(this.title + ": " + student);
+        });
+    },
+};
+
+group.showList();
+```
+
+Here in forEach, the arrow function is used, so this.title in it is exactly the same as in the outer method showList. That is: group.title.
+
+**Conclusion**
+
+Hope you now be able to deduce what exactly this is referring to! Remember a few things:
+1- The value of this is usually determined by a functions execution context.
+2- In the global scope, this refers to the global object (the window object).
+3- The object that is standing before the dot is what the this keyword will be bound to.
+4- We can set the value of this explicitly with call(), bind(), and apply()
+5- When the new keyword is used(a constructor), this is bound to the new object being created.
+6- Arrow Functions don’t bind this — instead, this is bound lexically (i.e. based on the original context)
+
+Example:
 
 ```javascript
 function a() {
