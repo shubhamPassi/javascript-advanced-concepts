@@ -4440,7 +4440,7 @@ As we see when you call john.greet(“Mark”) this will refer to the john objec
 But after that when assignment var fx = john.greet;
 So fx will be a reference to the greet function itself so the default binding applies and this will refer to Window.
 
-**3- Explicit Binding:**
+**3. Explicit Binding:**
 In this case, you can force a function call to use a particular object for this binding, without putting a property function reference on the object. so we explicitly say to a function what object it should use for this — using functions such as call, apply and bind
 
 ```javascript
