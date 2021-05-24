@@ -3114,7 +3114,7 @@ More info: [MDN Reflect](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 Calls in tail-position are guaranteed to not grow the stack unboundedly. Makes recursive algorithms safe in the face of unbounded inputs.
 
-![Tail Call Explanation](https://www.youtube.com/watch?v=Ex3lT8QLRns&ab_channel=codedamn)
+- [Tail Call Explanation](https://www.youtube.com/watch?v=Ex3lT8QLRns&ab_channel=codedamn)
 ```JavaScript
 function factorial(n, acc = 1) {
     if (n <= 1) return acc;
